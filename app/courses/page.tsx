@@ -220,7 +220,8 @@ export default function CoursesPage() {
           <h1>اتعلّم AI من <em>الصفر إلى التطبيق</em></h1>
           <p>كورسات مختارة لتتعلم أساسيات الذكاء الاصطناعي، وتستخدم ChatGPT وGemini وClaude، وتكتشف أدوات ونماذج جديدة خطوة بخطوة.</p>
           <div className="courses-hero-actions">
-            <a href="#video-paths">كورسات الفيديو <PlayCircle size={16}/></a>
+            <a href="#top-paths">أفضل المسارات <Award size={16}/></a>
+            <a className="secondary" href="#video-paths">كورسات الفيديو <PlayCircle size={16}/></a>
             <a className="secondary" href="#catalog">كل المسارات <ArrowLeft size={16}/></a>
             <a className="secondary" href="#learning-hubs">مواقع تتعلم منها <ExternalLink size={15}/></a>
           </div>
@@ -237,6 +238,24 @@ export default function CoursesPage() {
         </div>
       </section>
 
+
+      <section className="top-paths-section" id="top-paths">
+        <div className="section-intro">
+          <span><Award size={14}/> أفضل ترشيحات البداية</span>
+          <h2>ابدأ بأقوى مسار لكل منصة</h2>
+          <p>ترشيحات تحريرية مبنية على وضوح الشرح ووجود محتوى رسمي أو تطبيقي حديث؛ ليست ترتيبًا مطلقًا للنماذج أو تقييمًا مدفوعًا.</p>
+        </div>
+        <div className="top-paths-grid">
+          <article className="top-path-card top-choice"><div className="top-path-rank">01 · البداية العامة</div><h3>أساسيات AI وPrompting</h3><p>افهم كيف تتعامل مع أي مساعد قبل أن تتخصص في تطبيق معين.</p><small>OpenAI Academy + DeepLearning.AI</small><a href="https://academy.openai.com/public/courses/ai-foundations-dnq5w" target="_blank" rel="noreferrer">ابدأ المسار <ArrowUpRight size={15}/></a></article>
+          <article className="top-path-card"><div className="top-path-rank">02 · ChatGPT</div><h3>ChatGPT من الأساسيات للأدوات</h3><p>محادثة وملفات وبحث وميزات حديثة وشرح عربي تمهيدي.</p><small>OpenAI Academy + ChatGPT Learn</small><a href="https://openai.com/ar/academy/getting-started/" target="_blank" rel="noreferrer">ابدأ ChatGPT <ArrowUpRight size={15}/></a></article>
+          <article className="top-path-card"><div className="top-path-rank">03 · Gemini</div><h3>Gemini وتطبيقات Google</h3><p>كورس عربي شامل، ثم مسار Google الرسمي للعمل داخل Workspace.</p><small>احتراف البرامج + Google Skills</small><a href="https://www.youtube.com/watch?v=JxUaznXmn5w" target="_blank" rel="noreferrer">شاهد كورس Gemini <ArrowUpRight size={15}/></a></article>
+          <article className="top-path-card"><div className="top-path-rank">04 · Claude</div><h3>Claude وCowork وClaude Code</h3><p>ابدأ بالدورة الرسمية ثم انتقل إلى العمل الوكيلي أو البرمجة.</p><small>Claude Academy + شرح عربي</small><a href="https://academy.claude.com/courses/claude-101" target="_blank" rel="noreferrer">ابدأ Claude 101 <ArrowUpRight size={15}/></a></article>
+          <article className="top-path-card"><div className="top-path-rank">05 · NotebookLM</div><h3>المذاكرة والبحث من ملفاتك</h3><p>حوّل PDF ومصادر الكورس وفيديوهات YouTube إلى دفتر بحث ومراجعة.</p><small>Google NotebookLM + Kevin Stratvert</small><a href="https://www.youtube.com/watch?v=uSVBfyHBiDU" target="_blank" rel="noreferrer">شاهد الشرح الكامل <ArrowUpRight size={15}/></a></article>
+          <article className="top-path-card"><div className="top-path-rank">06 · Copilot</div><h3>AI داخل تطبيقات Microsoft</h3><p>تعلم استخدام Copilot في Word وExcel وPowerPoint وTeams.</p><small>Microsoft Copilot Learning</small><a href="https://support.microsoft.com/en-us/microsoft-365-copilot/index" target="_blank" rel="noreferrer">ابدأ Copilot <ArrowUpRight size={15}/></a></article>
+          <article className="top-path-card"><div className="top-path-rank">07 · الصور والفيديو</div><h3>التصميم والفيديو بالذكاء الاصطناعي</h3><p>تعلم Runway وMidjourney وCanva من أكاديمياتها ومصادرها.</p><small>Runway Academy + Midjourney + Canva</small><a href="https://academy.runway.com/courses" target="_blank" rel="noreferrer">استكشف أكاديمية الفيديو <ArrowUpRight size={15}/></a></article>
+          <article className="top-path-card"><div className="top-path-rank">08 · البرمجة والأتمتة</div><h3>Agents وCoding وWorkflows</h3><p>Cursor وHugging Face وn8n لبناء مشاريع وأتمتة خطوات فعلية.</p><small>Cursor Learn + Hugging Face + n8n</small><a href="https://n8n.io/education/" target="_blank" rel="noreferrer">ابدأ الأتمتة <ArrowUpRight size={15}/></a></article>
+        </div>
+      </section>
       <section className="start-section">
         <div className="section-intro"><span>ابدأ من هنا</span><h2>مسار مقترح للمبتدئين</h2><p>مش محتاج تبدأ بكل الأدوات مرة واحدة. امشِ بالترتيب ده، وبعدها اختار التخصص اللي يناسبك.</p></div>
         <div className="start-grid">
