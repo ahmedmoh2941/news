@@ -250,7 +250,10 @@ const learningHubs = [
   {name:"n8n Academy",by:"n8n",what:"دورات عملية مجانية في الأتمتة وربط التطبيقات والوكلاء مع شارات إتمام.",type:"أكاديمية رسمية",lang:"الإنجليزية.",url:"https://n8n.io/education/"},
   {name:"Mistral Learn",by:"Mistral AI",what:"دورات وندوات ومواد تعلم عن نماذج Mistral وStudio وVibe.",type:"أكاديمية رسمية",lang:"الإنجليزية.",url:"https://learn.mistral.ai/public/courses"},
   {name:"DeepSeek API Docs",by:"DeepSeek",what:"أدلة API وتحديثات النماذج وأمثلة للمطورين.",type:"وثائق رسمية",lang:"الإنجليزية.",url:"https://api-docs.deepseek.com/"},
-  {name:"Midjourney Documentation",by:"Midjourney",what:"دليل إنشاء الصور والفيديو والتخصيص وكتابة الأوامر.",type:"وثائق رسمية",lang:"الإنجليزية.",url:"https://docs.midjourney.com/"}
+  {name:"Midjourney Documentation",by:"Midjourney",what:"دليل إنشاء الصور والفيديو والتخصيص وكتابة الأوامر.",type:"وثائق رسمية",lang:"الإنجليزية.",url:"https://docs.midjourney.com/"},
+  {name:"Grok Help & Docs",by:"xAI",what:"شرح Grok للمحادثة والبحث والصور والفيديو والصوت والملفات والموصلات.",type:"دليل رسمي",lang:"الإنجليزية.",url:"https://docs.x.ai/grok/overview"},
+  {name:"QwenCloud Docs",by:"Alibaba Qwen",what:"توثيق النماذج وتحديثات الإصدارات والواجهات والسياق والأسعار والإتاحة الإقليمية.",type:"وثائق رسمية",lang:"الإنجليزية.",url:"https://docs.qwencloud.com/changelog/models"},
+  {name:"Meta Model API",by:"Meta",what:"Quickstarts وCookbooks وMuse Spark وMuse Spark Open وMuse Code وأدلة الصور والفيديو والصوت.",type:"دليل ومختبرات رسمية",lang:"الإنجليزية.",url:"https://dev.meta.ai/docs/overview"}
 
 ];
 
