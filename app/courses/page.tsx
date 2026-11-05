@@ -211,11 +211,16 @@ export default function CoursesPage() {
   const [videoLanguage,setVideoLanguage] = useState<VideoLanguage>("الكل");
   const [videoTool,setVideoTool] = useState<VideoTool>("الكل");
   const filteredVideoCourses = videoCourses.filter(v => (videoLanguage === "الكل" || v.lang === videoLanguage) && (videoTool === "الكل" || v.tool === videoTool));
+  const topicPriority: Record<Topic, number> = {
+    "أساسيات AI": 0, "Gemini": 1, "Claude": 2, "NotebookLM": 3, "Copilot": 4,
+    "Perplexity": 5, "صور وفيديو": 6, "العمل والإنتاجية": 7, "ChatGPT": 8,
+    "البرمجة والنماذج": 9, "الأتمتة": 10
+  };
   const filtered = useMemo(() => courses.filter(c => {
     const text = [c.title,c.provider,c.description,c.topic,c.level,c.language].join(" ").toLowerCase();
     return (topic === "الكل" || c.topic === topic) && text.includes(query.toLowerCase()) &&
       (!onlyFree || c.price.toLowerCase().includes("مجاني") || c.price.toLowerCase().includes("free"));
-  }),[topic,query,onlyFree]);
+  }).sort((a,b)=>topicPriority[a.topic]-topicPriority[b.topic]),[topic,query,onlyFree]);
   const visible = showAll ? filtered : filtered.slice(0,8);
 
   return (
@@ -272,25 +277,25 @@ export default function CoursesPage() {
         <div className="section-intro"><span>ابدأ من هنا</span><h2>مسار مقترح للمبتدئين</h2><p>مش محتاج تبدأ بكل الأدوات مرة واحدة. امشِ بالترتيب ده، وبعدها اختار التخصص اللي يناسبك.</p></div>
         <div className="start-grid">
           <article className="start-card main-start">
-            <div className="start-label"><span>01</span><b>بداية عربية سهلة</b></div>
-            <h3>ChatGPT من الصفر إلى الاستخدام العملي</h3>
-            <p>فيديو عربي حديث يشرح الواجهة والملفات والصوت وProjects وكتابة الأوامر بأمثلة عملية.</p>
-            <div className="start-meta"><span><Languages size={14}/> العربية</span><span><Clock3 size={14}/> حوالي 90 دقيقة</span><span><PlayCircle size={14}/> مجاني</span></div>
-            <a href="https://www.youtube.com/watch?v=kELkBDg_uyo" target="_blank" rel="noreferrer">شاهد الكورس <ArrowUpRight size={16}/></a>
-          </article>
-          <article className="start-card">
-            <div className="start-label"><span>02</span><b>أساسيات موثوقة</b></div>
-            <h3>AI Foundations</h3>
-            <p>راجع مبادئ AI وصياغة الطلبات والتأكد من جودة النتائج من أكاديمية OpenAI.</p>
+            <div className="start-label"><span>01</span><b>ابدأ بفهم المجال</b></div>
+            <h3>AI Foundations – أساسيات الذكاء الاصطناعي</h3>
+            <p>مسار تأسيسي من OpenAI يشرح المفاهيم الأساسية وكتابة الأوامر والسياق ومراجعة النتائج. لغة الدورة قد تختلف داخل صفحة التسجيل.</p>
             <div className="start-meta"><span><Clock3 size={14}/> 60–75 دقيقة</span><span><CheckCircle2 size={14}/> مجاني</span></div>
-            <a href="https://openai.com/ar/academy/getting-started/" target="_blank" rel="noreferrer">ابدأ من المصدر الرسمي <ArrowUpRight size={16}/></a>
+            <a href="https://academy.openai.com/public/courses/ai-foundations-dnq5w" target="_blank" rel="noreferrer">ابدأ الأساسيات <ArrowUpRight size={16}/></a>
           </article>
           <article className="start-card">
-            <div className="start-label"><span>03</span><b>اتقن طريقة الطلب</b></div>
-            <h3>AI Prompting for Everyone</h3>
-            <p>تعلم توجيه ChatGPT وGemini وClaude للبحث والكتابة والتفكير وإنشاء المحتوى.</p>
-            <div className="start-meta"><span><Clock3 size={14}/> 3 ساعات تقريبًا</span><span>مبتدئ</span></div>
-            <a href="https://www.deeplearning.ai/courses/ai-prompting-for-everyone" target="_blank" rel="noreferrer">اعرض الكورس <ArrowUpRight size={16}/></a>
+            <div className="start-label"><span>02</span><b>جرّب نموذجًا مختلفًا</b></div>
+            <h3>Gemini من الصفر إلى الاستخدام العملي</h3>
+            <p>شرح عربي لواجهة Gemini، مع مسار Google الرسمي لاستخدامه في Gmail وDocs وSlides وSheets.</p>
+            <div className="start-meta"><span><Languages size={14}/> العربية + مسار إنجليزي رسمي</span><span><PlayCircle size={14}/> فيديو مجاني</span></div>
+            <a href="https://www.youtube.com/watch?v=JxUaznXmn5w" target="_blank" rel="noreferrer">شاهد شرح Gemini <ArrowUpRight size={16}/></a>
+          </article>
+          <article className="start-card">
+            <div className="start-label"><span>03</span><b>تعرّف على Claude</b></div>
+            <h3>Claude 101</h3>
+            <p>دورة مجانية رسمية من Anthropic عن المحادثة وPrompting وProjects وArtifacts وSkills والبحث.</p>
+            <div className="start-meta"><span><Clock3 size={14}/> ساعتان ونصف</span><span><CheckCircle2 size={14}/> شارة إتمام</span><span>إنجليزي</span></div>
+            <a href="https://academy.claude.com/courses/claude-101" target="_blank" rel="noreferrer">ابدأ Claude 101 <ArrowUpRight size={16}/></a>
           </article>
         </div>
         <p className="start-note">بعد المسار ده، ادخل على كورس الأداة اللي هتستخدمها باستمرار: ChatGPT أو Gemini أو Claude. لغة الدروس وشروط التسجيل موضحة في صفحة كل جهة.</p>
