@@ -18,10 +18,10 @@ type Course = {
 
 const courses: Course[] = [
   {
-    id:"hala-foundations", title:"أساسيات الذكاء الاصطناعي وChatGPT", provider:"أكاديمية HalaGPT",
-    topic:"أساسيات AI", level:"مبتدئ", duration:"ساعتان • 7 دروس", price:"مجاني",
-    language:"العربية", description:"مدخل عملي من معنى الذكاء الاصطناعي إلى أول محادثة فعّالة، مع أمثلة للدراسة والعمل ومقارنة المساعدات.",
-    takeaway:"مناسب جدًا كبداية عربية بدون خلفية تقنية.", href:"https://hala.academy/courses/foundations", official:false, icon:GraduationCap
+    id:"chatgpt-ar-video", title:"ChatGPT من الصفر إلى الاستخدام العملي", provider:"فتحي وأبوسريع – YouTube",
+    topic:"ChatGPT", level:"مبتدئ", duration:"حوالي ساعة ونصف", price:"مجاني • فيديو",
+    language:"العربية", description:"شرح عملي للواجهة والحساب والنماذج ورفع الملفات والصوت والمشروعات وكتابة الأوامر واستخدامات الدراسة والعمل.",
+    takeaway:"بداية عربية عملية؛ راجع اختلاف أسماء الخصائص حسب تحديث التطبيق.", href:"https://www.youtube.com/watch?v=kELkBDg_uyo", official:false, icon:PlayCircle
   },
   {
     id:"openai-foundations", title:"AI Foundations – أساسيات الذكاء الاصطناعي", provider:"OpenAI Academy",
@@ -67,8 +67,8 @@ const courses: Course[] = [
   },
   {
     id:"ai-prompting", title:"AI Prompting for Everyone", provider:"DeepLearning.AI – Andrew Ng",
-    topic:"ChatGPT", level:"مبتدئ", duration:"3 ساعات و4 دقائق • 21 فيديو", price:"الإتاحة والشهادة حسب الخطة",
-    language:"الإنجليزية", description:"استخدام AI للبحث وكتابة المحتوى والتفكير مع المساعد وإنشاء الصور والتطبيقات البسيطة.",
+    topic:"ChatGPT", level:"مبتدئ", duration:"3 ساعات و4 دقائق • 21 فيديو", price:"التسجيل مجاني؛ بعض المختبرات والشهادة ضمن PRO",
+    language:"الإنجليزية", description:"21 درس فيديو عن البحث والكتابة والتفكير مع المساعد والعمل بالصور والبيانات وبناء تطبيقات بسيطة.",
     takeaway:"من أفضل الخيارات لتطوير مهارات الاستخدام اليومي عبر أدوات متعددة.", href:"https://www.deeplearning.ai/courses/ai-prompting-for-everyone", official:false, icon:WandSparkles
   },
   {
@@ -145,9 +145,26 @@ const courses: Course[] = [
   }
 ];
 
+
+type VideoLanguage = "الكل" | "العربية" | "الإنجليزية";
+const videoCourses = [
+ {id:"chatgpt-ar",title:"ChatGPT Tutorial for Beginners 2026",creator:"فتحي وأبوسريع – قناة عربية",lang:"العربية",level:"مبتدئ",duration:"حوالي 1.5 ساعة",access:"مجاني على YouTube",kind:"فيديو كامل",description:"شرح من الصفر: الحساب والواجهة والنماذج ورفع الملفات والصوت وProjects وكتابة Prompts وتطبيقات عملية. قد تتغير بعض تفاصيل الواجهة مع التحديثات.",href:"https://www.youtube.com/watch?v=kELkBDg_uyo"},
+ {id:"openai-getting-started",title:"انطلق مع ChatGPT – الدليل الرسمي",creator:"OpenAI Academy",lang:"العربية",level:"مبتدئ",duration:"شرح تمهيدي",access:"مجاني",kind:"دورة منظمة",description:"ابدأ بالمحادثة الأولى وتعرّف على واجهة ChatGPT من شرح رسمي باللغة العربية يتضمن فيديو توضيحيًا.",href:"https://openai.com/ar/academy/getting-started/"},
+ {id:"claude-ar",title:"كورس تعلم كلود من الصفر | Claude 101",creator:"غريب الشيخ – YouTube",lang:"العربية",level:"مبتدئ إلى متوسط",duration:"شرح مطوّل بفصول",access:"مجاني على YouTube",kind:"فيديو كامل",description:"شرح عربي لواجهة Claude وكتابة الأوامر والنماذج والمرفقات وProjects وArtifacts وSkills واستخدامه في العمل.",href:"https://www.youtube.com/watch?v=oz44Wp22iCU"},
+ {id:"gemini-ar",title:"شرح Gemini من الهاتف المحمول 2026",creator:"أبو عبدالله أونلاين",lang:"العربية",level:"مبتدئ",duration:"شرح عملي",access:"مجانًا للمشاهدة",kind:"شرح مع ملخص",description:"شرح عملي لتطبيق Gemini على الهاتف: المحادثة والصور والملفات والصوت ومشاركة الشاشة وGems. الرابط يفتح صفحة ملخص وتفريغ للفيديو وفصوله، وليس رابط YouTube مباشرًا.",href:"https://readray.ai/ar/notes/gemini-cli-20260813/best-ai-course-gemini-mobile-tutorial-2026"},
+ {id:"ai-crash-ar",title:"AI Crash Course for Professionals",creator:"Mohannad Hesham Abouelrouse – Udemy",lang:"العربية",level:"مبتدئ إلى متوسط",duration:"5 ساعات و12 دقيقة • 72 محاضرة",access:"مدفوع؛ السعر يتغير حسب العروض",kind:"دورة منظمة",description:"مسار عربي يجمع ChatGPT وGemini وClaude وCopilot وPerplexity وGamma وأدوات الاجتماعات، مع تطبيقات عملية في الإنتاجية والبحث والعروض.",href:"https://www.udemy.com/course/ai-crash-course-for-professionals/"},
+ {id:"claude-master-ar",title:"Claude AI Masterclass in Arabic",creator:"Ameen AB – Udemy",lang:"العربية",level:"مبتدئ إلى متقدم",duration:"4 ساعات ونصف • 93 محاضرة",access:"مدفوع؛ السعر يتغير",kind:"دورة منظمة",description:"مسار عربي يغطي Prompts وProjects وArtifacts وSkills وClaude Desktop وCowork وClaude Code والأتمتة. آخر تحديث معلن أغسطس 2026.",href:"https://www.udemy.com/course/claude-ai-masterclass-in-arabic/"},
+ {id:"prompting-everyone",title:"AI Prompting for Everyone",creator:"DeepLearning.AI – Andrew Ng",lang:"الإنجليزية",level:"مبتدئ",duration:"3 ساعات و4 دقائق • 21 فيديو",access:"التسجيل متاح مجانًا؛ بعض المختبرات والشهادة ضمن PRO",kind:"دورة منظمة",description:"كورس فيديو عملي عن البحث بمساعدة AI وكتابة المحتوى والتفكير مع النماذج والعمل بالصور والبيانات وبناء تطبيقات بسيطة.",href:"https://www.deeplearning.ai/courses/ai-prompting-for-everyone"},
+ {id:"prompting-video",title:"Full AI Prompting Course with Andrew Ng",creator:"DeepLearning.AI – YouTube",lang:"الإنجليزية",level:"مبتدئ",duration:"حوالي ساعتين و27 دقيقة",access:"مجاني على YouTube",kind:"فيديو كامل",description:"نسخة فيديو كاملة عن البحث والكتابة والسياق والصور وتحليل البيانات وبناء التطبيقات باستخدام الذكاء الاصطناعي.",href:"https://www.youtube.com/watch?v=8ib4Qnh2HFE"},
+ {id:"claude101-official",title:"Claude 101",creator:"Claude Academy – Anthropic",lang:"الإنجليزية",level:"مبتدئ",duration:"ساعتان ونصف • 13 درسًا واختبار",access:"مجاني • شارة إتمام",kind:"دورة منظمة",description:"المسار الرسمي لتعلم Claude من أول محادثة إلى Prompting وProjects وArtifacts وSkills والموصلات والبحث.",href:"https://academy.claude.com/courses/claude-101"},
+ {id:"claudecode-official",title:"Claude Code 101",creator:"Claude Academy – Anthropic",lang:"الإنجليزية",level:"متوسط",duration:"ساعة ونصف • 12 درسًا",access:"مجاني • شارة إتمام",kind:"دورة منظمة",description:"للتعامل مع Claude Code في فهم المشاريع البرمجية وتخطيط التغييرات وكتابة الكود ومراجعته.",href:"https://academy.claude.com/courses/claude-code-101"},
+ {id:"multi-tool-en",title:"ChatGPT, Claude, Projects, AI Agents from Beginner to Expert",creator:"Todd McLeod – Udemy",lang:"الإنجليزية",level:"مبتدئ إلى متقدم",duration:"27 ساعة ونصف • 214 محاضرة",access:"مدفوع؛ ترجمة عربية تلقائية حسب صفحة الدورة",kind:"دورة منظمة",description:"دورة طويلة تجمع ChatGPT وClaude وGemini وCopilot وGrok وPrompt Engineering والوكلاء والأتمتة والملفات والصوت والصور والكود.",href:"https://www.udemy.com/course/learn-ai/"}
+];
+
 const topics = ["الكل","أساسيات AI","ChatGPT","Gemini","Claude","العمل والإنتاجية","البرمجة والنماذج"];
 const learningHubs = [
-  {name:"OpenAI Academy",by:"OpenAI",what:"دورات AI Foundations وChatGPT وAgents وCodex والتعليم.",type:"أكاديمية رسمية",lang:"بعض صفحات المحتوى بالعربية؛ لغة الدورة تختلف.",url:"https://academy.openai.com/public/courses"},
+  {name:"OpenAI Academy",by:"OpenAI",what:"دورات AI Foundations وChatGPT وAgents وCodex والتعليم.",type:"أكاديمية رسمية",lang:"يتوفر محتوى عربي؛ لغة كل دورة قد تختلف.",url:"https://academy.openai.com/pages/courses"},
+  {name:"ChatGPT Learn",by:"OpenAI",what:"مكتبة فيديوهات قصيرة وعروض عملية لخصائص ChatGPT وCodex وسير العمل الجديد.",type:"فيديوهات رسمية",lang:"معظم الفيديوهات بالإنجليزية.",url:"https://learn.chatgpt.com/videos"},
   {name:"Claude Academy",by:"Anthropic",what:"Claude 101 وClaude Code وAI Fluency وMCP ودورات API.",type:"أكاديمية رسمية",lang:"المحتوى الظاهر حاليًا بالإنجليزية.",url:"https://academy.claude.com/courses"},
   {name:"Google AI Skills",by:"Google",what:"أساسيات AI وGemini وGoogle Workspace ومواد للمطورين.",type:"أكاديمية رسمية",lang:"تحقق من لغة كل مقرر.",url:"https://ai.google/learn-ai-skills/"},
   {name:"Gemini Apps Help",by:"Google",what:"شرح خصائص تطبيق Gemini: الملفات، الصور، البحث، الدفاتر، الإعدادات والخصوصية.",type:"دليل استخدام رسمي",lang:"يمكن تغيير لغة المساعدة من الموقع.",url:"https://support.google.com/gemini/"},
@@ -164,6 +181,8 @@ export default function CoursesPage() {
   const [query,setQuery] = useState("");
   const [showAll,setShowAll] = useState(false);
   const [onlyFree,setOnlyFree] = useState(false);
+  const [videoLanguage,setVideoLanguage] = useState<VideoLanguage>("الكل");
+  const filteredVideoCourses = videoCourses.filter(v => videoLanguage === "الكل" || v.lang === videoLanguage);
   const filtered = useMemo(() => courses.filter(c => {
     const text = [c.title,c.provider,c.description,c.topic,c.level,c.language].join(" ").toLowerCase();
     return (topic === "الكل" || c.topic === topic) && text.includes(query.toLowerCase()) &&
@@ -185,7 +204,8 @@ export default function CoursesPage() {
           <h1>اتعلّم AI من <em>الصفر إلى التطبيق</em></h1>
           <p>كورسات مختارة لتتعلم أساسيات الذكاء الاصطناعي، وتستخدم ChatGPT وGemini وClaude، وتكتشف أدوات ونماذج جديدة خطوة بخطوة.</p>
           <div className="courses-hero-actions">
-            <a href="#catalog">استكشف الكورسات <ArrowLeft size={16}/></a>
+            <a href="#video-paths">كورسات الفيديو <PlayCircle size={16}/></a>
+            <a className="secondary" href="#catalog">كل المسارات <ArrowLeft size={16}/></a>
             <a className="secondary" href="#learning-hubs">مواقع تتعلم منها <ExternalLink size={15}/></a>
           </div>
           <div className="courses-stats">
@@ -206,17 +226,17 @@ export default function CoursesPage() {
         <div className="start-grid">
           <article className="start-card main-start">
             <div className="start-label"><span>01</span><b>بداية عربية سهلة</b></div>
-            <h3>أساسيات الذكاء الاصطناعي وChatGPT</h3>
-            <p>ابدأ بكورس عربي يشرح المفاهيم وأول محادثة واختيار المساعد المناسب.</p>
-            <div className="start-meta"><span><Languages size={14}/> العربية</span><span><Clock3 size={14}/> ساعتان</span><span><CheckCircle2 size={14}/> مجاني</span></div>
-            <a href="https://hala.academy/courses/foundations" target="_blank" rel="noreferrer">ابدأ الكورس <ArrowUpRight size={16}/></a>
+            <h3>ChatGPT من الصفر إلى الاستخدام العملي</h3>
+            <p>فيديو عربي حديث يشرح الواجهة والملفات والصوت وProjects وكتابة الأوامر بأمثلة عملية.</p>
+            <div className="start-meta"><span><Languages size={14}/> العربية</span><span><Clock3 size={14}/> حوالي 90 دقيقة</span><span><PlayCircle size={14}/> مجاني</span></div>
+            <a href="https://www.youtube.com/watch?v=kELkBDg_uyo" target="_blank" rel="noreferrer">شاهد الكورس <ArrowUpRight size={16}/></a>
           </article>
           <article className="start-card">
             <div className="start-label"><span>02</span><b>أساسيات موثوقة</b></div>
             <h3>AI Foundations</h3>
             <p>راجع مبادئ AI وصياغة الطلبات والتأكد من جودة النتائج من أكاديمية OpenAI.</p>
             <div className="start-meta"><span><Clock3 size={14}/> 60–75 دقيقة</span><span><CheckCircle2 size={14}/> مجاني</span></div>
-            <a href="https://academy.openai.com/public/courses" target="_blank" rel="noreferrer">اعرض الدورات <ArrowUpRight size={16}/></a>
+            <a href="https://openai.com/ar/academy/getting-started/" target="_blank" rel="noreferrer">ابدأ من المصدر الرسمي <ArrowUpRight size={16}/></a>
           </article>
           <article className="start-card">
             <div className="start-label"><span>03</span><b>اتقن طريقة الطلب</b></div>
@@ -227,6 +247,32 @@ export default function CoursesPage() {
           </article>
         </div>
         <p className="start-note">بعد المسار ده، ادخل على كورس الأداة اللي هتستخدمها باستمرار: ChatGPT أو Gemini أو Claude. لغة الدروس وشروط التسجيل موضحة في صفحة كل جهة.</p>
+      </section>
+
+
+      <section className="video-paths-section" id="video-paths">
+        <div className="section-intro">
+          <span><PlayCircle size={14}/> كورسات فيديو مختارة</span>
+          <h2>اتفرج واتعلم خطوة بخطوة</h2>
+          <p>دورات فيديو طويلة وشروحات عملية، مرتبة من البداية إلى التخصص. بعض البطاقات تفتح فيديو مباشرًا، وبعضها دورة تفاعلية أو صفحة ملخص لفيديو.</p>
+        </div>
+        <div className="video-language-tabs">
+          {(["الكل","العربية","الإنجليزية"] as VideoLanguage[]).map(l=><button key={l} onClick={()=>setVideoLanguage(l)} className={videoLanguage===l?"active":""}>{l}</button>)}
+        </div>
+        <div className="video-course-grid">
+          {filteredVideoCourses.map(v=><article className="video-course-card" key={v.id}>
+            <div className="video-course-head">
+              <span className="video-play-icon"><PlayCircle size={23}/></span>
+              <span className={v.kind==="فيديو كامل"?"video-kind direct":v.kind==="شرح مع ملخص"?"video-kind notes":"video-kind structured"}>{v.kind}</span>
+            </div>
+            <small className="video-creator">{v.creator}</small>
+            <h3>{v.title}</h3>
+            <p>{v.description}</p>
+            <div className="video-course-meta"><span><Languages size={14}/>{v.lang}</span><span><GraduationCap size={14}/>{v.level}</span><span><Clock3 size={14}/>{v.duration}</span></div>
+            <div className="video-course-bottom"><b>{v.access}</b><a href={v.href} target="_blank" rel="noreferrer">{v.kind==="فيديو كامل"?"شاهد الفيديو":v.kind==="شرح مع ملخص"?"افتح ملخص الفيديو":"افتح الدورة"} <ArrowUpRight size={16}/></a></div>
+          </article>)}
+        </div>
+        <p className="video-disclaimer">ملحوظة: روابط YouTube مجانية للمشاهدة، أما منصات الكورسات فقد تتيح التسجيل مجانًا مع رسوم لبعض الشهادات أو المزايا. الترجمة التلقائية ليست ترجمة عربية أصلية. راجع تاريخ تحديث كل دورة قبل الاعتماد على شرح خصائص الواجهة.</p>
       </section>
 
       <section className="catalog-section" id="catalog">
