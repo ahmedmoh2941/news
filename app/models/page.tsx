@@ -66,6 +66,21 @@ export default function ModelsPage(){
    <h2>اختار حسب استخدامك</h2>
    <div className="pick-grid">{picks.map(([task,name,desc])=><article className="pick-card" key={task}><b>{task}</b><strong>{name}</strong><p>{desc}</p></article>)}</div>
   </section>
+
+  <section className="model-releases">
+    <div className="releases-heading">
+      <div><span>NEW RELEASES • NOV 2026</span><h2>أحدث إصدارات النماذج</h2><p>ملخص سريع لأبرز الإصدارات المعلنة مؤخرًا، مع رابط الإعلان الرسمي وتاريخ الإصدار.</p></div>
+      <span className="releases-count">{recentReleases.length} تحديثات</span>
+    </div>
+    <div className="release-grid">
+      {recentReleases.map((item)=><article className="release-card" key={item.name}>
+        <div className="release-meta"><span>{item.maker}</span><time>{item.date}</time></div>
+        <h3>{item.name}</h3><p>{item.summary}</p>
+        <a href={item.href} target="_blank" rel="noreferrer">تفاصيل الإعلان <ArrowUpRight size={14}/></a>
+      </article>)}
+    </div>
+    <p className="releases-note">هذه تحديثات منتقاة من إعلانات الشركات الرسمية، وليست ترتيبًا للأفضل أداءً. الإتاحة والخطط والأسعار قد تختلف حسب المنطقة والمنتج.</p>
+  </section>
   <section className="catalog">
    <div className="catalog-title"><div><span>MODEL & APP DIRECTORY</span><h2>دليل النماذج والتطبيقات</h2></div><b>{shown.length} أداة</b></div>
    <div className="models-tools"><label className="models-search"><Search size={17}/><input value={query} onChange={e=>setQuery(e.target.value)} placeholder="ابحث عن نموذج أو استخدام..."/></label><div className="models-filters">{categories.map(x=><button key={x} onClick={()=>setCategory(x)} className={category===x?"active":""}>{x}</button>)}</div></div>
