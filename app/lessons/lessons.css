@@ -1,1 +1,57 @@
 .lessons-page{max-width:1040px;margin:auto;padding:30px 34px 26px;color:var(--text);font-family:'Cairo',Arial,sans-serif}.lessons-header{padding:8px 0 28px;border-bottom:1px solid var(--line)}.lessons-back{display:inline-flex;align-items:center;gap:7px;color:#9bdfe5;text-decoration:none;font-size:13px;margin-bottom:22px}.lessons-kicker{display:flex;align-items:center;gap:8px;color:#82dfe6;font-size:13px;font-weight:800}.lessons-meta{display:flex;gap:9px;flex-wrap:wrap;margin-top:17px}.lessons-meta span{font-size:11px;color:#b8c7d8;background:#172336;border:1px solid #2c3d53;border-radius:30px;padding:5px 10px}.lessons-header h1{font-size:37px;line-height:1.5;font-weight:900;margin:12px 0}.lessons-header h1 em{font-style:normal;color:var(--cyan)}.lessons-header>p{font-size:15px;line-height:2;color:#b9c6d8;max-width:820px;margin:0}.lesson-outcome{display:flex;align-items:center;gap:14px;padding:18px 20px;margin:22px 0;border:1px solid #326070;background:linear-gradient(110deg,#122735,#171b32);border-radius:13px;color:#8ee7eb}.lesson-outcome b{font-size:15px}.lesson-outcome p{margin:4px 0 0;color:#c1cede;font-size:13px;line-height:1.9}.lesson-section{margin:27px 0}.lesson-heading{display:flex;align-items:flex-start;gap:13px;margin-bottom:14px}.lesson-heading>span{display:grid;place-items:center;width:35px;height:35px;flex-shrink:0;border-radius:10px;background:#183340;color:#8ce4e9;font-weight:900}.lesson-heading h2{font-size:21px;margin:0 0 4px}.lesson-heading p{font-size:13px;color:#aebdd0;margin:0;line-height:1.8}.lesson-compare{display:grid;grid-template-columns:1fr 1fr;gap:12px}.lesson-compare article,.prompt-framework article{padding:16px;border:1px solid var(--line);border-radius:12px;background:#101725}.lesson-compare small{font-size:11px;color:#f0bd79}.lesson-compare p{font-size:15px;line-height:2;color:#e0e7f0;margin:7px 0}.lesson-compare span{font-size:12px;color:#9eafc3}.lesson-compare .better{border-color:#326070;background:#10232c}.lesson-compare .better small{color:#83e1df}.prompt-framework{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.prompt-framework b{color:#8ce4e9;font-size:14px}.prompt-framework p{color:#c0ccda;font-size:13px;line-height:1.9;margin:7px 0 0}.lesson-steps{padding-right:24px;color:#d6dfeb;line-height:2.1;font-size:14px}.lesson-steps li{padding-right:5px;margin:7px 0}.lesson-steps span{display:block;color:#aab9cc;font-size:12px}.lesson-prompts{display:grid;gap:12px}.lesson-prompt{background:#101725;border:1px solid var(--line);border-radius:13px;padding:15px}.lesson-prompt-top{display:flex;justify-content:space-between;align-items:center;gap:12px}.lesson-prompt-top b{display:block;font-size:14px;color:#8ce4e9}.lesson-prompt-top small{display:block;font-size:11px;color:#aab9ca;margin-top:4px}.lesson-prompt button,.lesson-quiz>button{border:1px solid #3a6872;border-radius:8px;background:#17313c;color:#c4f6f5;padding:8px 11px;display:flex;align-items:center;gap:6px;font:12px 'Cairo';cursor:pointer;white-space:nowrap}.lesson-prompt pre{white-space:pre-wrap;overflow-wrap:anywhere;font:12px/2 'Cairo',Arial,sans-serif;color:#d5dfec;background:#0b1320;border:1px solid #26364b;border-radius:9px;padding:12px;margin:12px 0 0}.lesson-videos{display:grid;grid-template-columns:1fr 1fr;gap:12px}.lesson-videos article{display:flex;gap:13px;padding:16px;border:1px solid var(--line);background:#101725;border-radius:12px}.lesson-play{width:43px;height:43px;flex-shrink:0;display:grid;place-items:center;border-radius:12px;background:#183340;color:#8ce4e9}.lesson-videos b{font-size:14px}.lesson-videos small{display:block;color:#9eb0c5;font-size:11px;margin-top:4px}.lesson-videos p{color:#bdc9d8;font-size:12px;line-height:1.8;margin:7px 0}.lesson-videos a,.lesson-update a{display:inline-flex;align-items:center;gap:6px;color:#8ce4e9;text-decoration:none;font-size:12px;margin-left:14px}.lesson-update{padding:17px;border:1px solid #3b5368;border-radius:12px;background:#111e2d}.lesson-update>div{display:flex;align-items:center;gap:9px;color:#8ce4e9}.lesson-update p{font-size:13px;line-height:2;color:#c8d3e0}.lesson-update small{display:block;color:#91a2b7;font-size:11px;margin-top:13px}.lesson-quiz{padding:17px;border:1px solid var(--line);background:#101725;border-radius:12px}.lesson-quiz>b{display:block;font-size:14px;line-height:1.9;margin-bottom:12px}.lesson-quiz label{display:flex;gap:9px;align-items:flex-start;padding:9px 0;color:#cbd6e4;font-size:13px;line-height:1.8;cursor:pointer}.lesson-quiz input{margin-top:6px;accent-color:#63d4d7}.lesson-quiz>button{margin-top:10px}.quiz-correct,.quiz-try{font-size:13px;padding:10px;border-radius:8px;margin:12px 0 0}.quiz-correct{color:#8de5b1;background:#123023}.quiz-try{color:#f4cf8b;background:#302718}.lesson-tip{display:flex;gap:13px;align-items:center;padding:17px;border:1px solid #326070;background:#11242e;border-radius:12px;color:#8ce4e9}.lesson-tip b{font-size:14px}.lesson-tip p{margin:4px 0 0;color:#c2d0dc;font-size:13px;line-height:1.8}.lessons-footer{border-top:1px solid var(--line);margin-top:30px;padding-top:16px;color:#8192a8;font-size:11px}@media(max-width:720px){.lessons-page{padding:20px 14px}.lessons-header h1{font-size:28px}.lesson-compare,.prompt-framework,.lesson-videos{grid-template-columns:1fr}.lesson-heading h2{font-size:18px}.lesson-prompt-top{align-items:flex-start;flex-direction:column}.lesson-prompt button{align-self:flex-start}}
+
+/* Larger type and wider lesson canvas */
+.lessons-page{max-width:1320px;padding:38px clamp(24px,3vw,54px) 30px}
+.lessons-header h1{font-size:42px;line-height:1.55}
+.lessons-header>p{font-size:17px;line-height:2.15;max-width:1050px}
+.lessons-back,.lessons-kicker{font-size:14px}
+.lessons-meta span{font-size:12px;padding:6px 12px}
+.lesson-outcome{padding:22px 24px}
+.lesson-outcome b{font-size:17px}
+.lesson-outcome p{font-size:15px;line-height:2.1}
+.lesson-section{margin:32px 0}
+.lesson-heading{gap:15px;margin-bottom:17px}
+.lesson-heading>span{width:39px;height:39px;font-size:15px}
+.lesson-heading h2{font-size:24px}
+.lesson-heading p{font-size:15px;line-height:2}
+.lesson-compare{gap:16px}
+.lesson-compare article,.prompt-framework article{padding:20px}
+.lesson-compare small{font-size:13px}
+.lesson-compare p{font-size:17px;line-height:2.05}
+.lesson-compare span{font-size:14px;line-height:1.9}
+.prompt-framework{gap:14px}
+.prompt-framework b{font-size:16px}
+.prompt-framework p{font-size:15px;line-height:2.1}
+.lesson-steps{font-size:16px;line-height:2.2}
+.lesson-steps span{font-size:14px}
+.lesson-prompt{padding:19px}
+.lesson-prompt-top b{font-size:16px}
+.lesson-prompt-top small{font-size:13px}
+.lesson-prompt button,.lesson-quiz>button{font-size:14px;padding:9px 13px}
+.lesson-prompt pre{font-size:14px;line-height:2.1;padding:15px}
+.lesson-videos{gap:15px}
+.lesson-videos article{padding:19px}
+.lesson-videos b{font-size:16px}
+.lesson-videos small{font-size:13px}
+.lesson-videos p{font-size:14px;line-height:2}
+.lesson-videos a,.lesson-update a{font-size:14px}
+.lesson-update{padding:21px}
+.lesson-update p{font-size:15px;line-height:2.1}
+.lesson-update small{font-size:12px;line-height:1.9}
+.lesson-quiz{padding:21px}
+.lesson-quiz>b{font-size:16px;line-height:2}
+.lesson-quiz label{font-size:15px;line-height:2}
+.quiz-correct,.quiz-try{font-size:14px;line-height:1.9}
+.lesson-tip{padding:20px}
+.lesson-tip b{font-size:16px}
+.lesson-tip p{font-size:15px;line-height:2}
+.lessons-footer{font-size:13px}
+@media(max-width:720px){
+ .lessons-page{padding:21px 15px}
+ .lessons-header h1{font-size:30px}
+ .lessons-header>p{font-size:14px}
+ .lesson-heading h2{font-size:19px}
+ .lesson-compare p{font-size:15px}
+ .prompt-framework p,.lesson-steps{font-size:14px}
+ .lesson-prompt pre{font-size:13px}
+}
