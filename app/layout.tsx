@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "AI HUB | مركز أخبار الذكاء الاصطناعي",
-  description: "تابع أحدث أخبار ونماذج وأدوات الذكاء الاصطناعي في مكان واحد.",
+  title: "AI HUB | كورسات وتعلم الذكاء الاصطناعي",
+  description: "مكتبة كورسات ومسارات عملية لتعلم الذكاء الاصطناعي واستخدام ChatGPT وGemini وClaude وأحدث الأدوات والنماذج.",
   icons: { icon: "/icon.svg", shortcut: "/icon.svg", apple: "/icon.svg" },
   themeColor: "#080b13",
 };
