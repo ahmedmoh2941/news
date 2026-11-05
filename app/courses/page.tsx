@@ -27,7 +27,7 @@ const courses: Course[] = [
     id:"openai-foundations", title:"AI Foundations – أساسيات الذكاء الاصطناعي", provider:"OpenAI Academy",
     topic:"أساسيات AI", level:"مبتدئ", duration:"60–75 دقيقة", price:"مجاني",
     language:"تحقق من لغة الدروس داخل الدورة", description:"أساسيات الذكاء الاصطناعي، كتابة أوامر أوضح، إضافة السياق، مراجعة المخرجات والاستخدام المسؤول.",
-    takeaway:"ابدأ به لفهم الأساسيات قبل التعمق في أداة واحدة.", href:"https://academy.openai.com/public/courses", official:true, icon:BrainCircuit
+    takeaway:"ابدأ به لفهم الأساسيات قبل التعمق في أداة واحدة.", href:"https://academy.openai.com/public/courses/ai-foundations-dnq5w", official:true, icon:BrainCircuit
   },
   {
     id:"elements-ai", title:"Elements of AI – أساسيات الذكاء الاصطناعي", provider:"University of Helsinki / MinnaLearn",
@@ -39,7 +39,7 @@ const courses: Course[] = [
     id:"google-genai", title:"Introduction to Generative AI", provider:"Google Skills",
     topic:"أساسيات AI", level:"مبتدئ", duration:"45 دقيقة", price:"مجاني • شارة إتمام",
     language:"تحقق من لغة المادة", description:"شرح مفهوم الذكاء الاصطناعي التوليدي واستخداماته والاختلاف بينه وبين تعلم الآلة التقليدي.",
-    takeaway:"درس قصير مناسب كبداية سريعة.", href:"https://www.skills.google/paths/118/course_templates/536", official:true, icon:Sparkles
+    takeaway:"درس قصير مناسب كبداية سريعة.", href:"https://ai.google/learn-ai-skills/", official:true, icon:Sparkles
   },
   {
     id:"openai-applied", title:"Applied AI Foundations", provider:"OpenAI Academy",
@@ -105,7 +105,7 @@ const courses: Course[] = [
     id:"gemini-workspace", title:"Google Workspace with Gemini", provider:"Google Skills",
     topic:"Gemini", level:"مبتدئ", duration:"8 أنشطة تعليمية", price:"تحقق من شروط Google Skills",
     language:"الإنجليزية غالبًا؛ راجع صفحة المسار", description:"التعامل مع Gemini داخل Gmail وDocs وSlides وSheets واستخدامه لتحسين الإنتاجية.",
-    takeaway:"مناسب لمن يستخدم تطبيقات Google في العمل.", href:"https://www.skills.google/paths/249Gemini", official:true, icon:Layers3
+    takeaway:"مناسب لمن يستخدم تطبيقات Google في العمل.", href:"https://www.skills.google/paths/249/course_templates/888", official:true, icon:Layers3
   },
   {
     id:"google-genai-path", title:"Introduction to Generative AI – Learning Path", provider:"Google Skills",
