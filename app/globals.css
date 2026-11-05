@@ -116,3 +116,56 @@ footer{font-size:10px;color:#8493aa}
 .models-footer{border-top:1px solid var(--line);margin-top:30px;padding-top:15px;color:#8090a6;font-size:10px}
 @media(max-width:1000px){.models-page{padding:25px}.model-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.pick-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:650px){.models-page{padding:18px 14px}.models-header h1{font-size:23px}.model-grid,.pick-grid{grid-template-columns:1fr}.catalog-title{align-items:start;gap:8px;flex-direction:column}}
+
+
+/* Typography: larger, clearer reading experience */
+html{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility}
+body{font-weight:500;letter-spacing:.05px}
+.topbar h1{font-size:31px;line-height:1.55;font-weight:900}
+.topbar p,.section-head p{font-size:14px;line-height:2.05;color:#c0cada}
+.hero h2{font-size:30px;line-height:1.55;font-weight:900}
+.hero p{font-size:15px;line-height:2.15;color:#c5d0df}
+.side-label,.eyebrow{font-size:11px}
+.nav-item{font-size:14px;font-weight:700}
+.section-head h2{font-size:22px;font-weight:800;line-height:1.6}
+.feed-status{font-size:12px}
+.searchbox input{font-size:14px}
+.searchbox input::placeholder{font-size:13px}
+.filter-btn,.archive-btn{font-size:13px}
+.chip{font-size:12px;font-weight:700}
+.category{font-size:11px;font-weight:800}
+.news-card h3{font-size:17px;line-height:1.95;font-weight:800;letter-spacing:0}
+.quick-label{font-size:12px;font-weight:800}
+.summary-points{font-size:13px;line-height:2.05;color:#d0d9e6;font-weight:500}
+.summary-points li{margin-bottom:6px}
+.summary-empty{font-size:13px;line-height:1.9}
+.news-card .card-foot{font-size:11px;color:#aebbd0}
+.brand b{font-size:22px;font-weight:900}
+.brand small{font-size:11px}
+.date-chip{font-size:12px}
+footer{font-size:11px}
+.models-page{font-size:14px}
+.models-header h1{font-size:33px;line-height:1.6}
+.models-header>p{font-size:15px;line-height:2.1}
+.pick-card b{font-size:12px}
+.pick-card strong{font-size:15px}
+.pick-card p{font-size:13px;line-height:1.95}
+.models-search input{font-size:14px}
+.models-filters button{font-size:12px}
+.model-card h3{font-size:19px}
+.model-best b,.model-usage b,.model-how b{font-size:12px}
+.model-best p,.model-usage p,.model-how p{font-size:13px;line-height:2}
+.model-note{font-size:11px;line-height:1.9}
+.model-card>a{font-size:12px}
+@media(max-width:700px){
+ .topbar h1{font-size:24px}
+ .topbar p,.section-head p{font-size:13px}
+ .hero h2{font-size:25px}
+ .hero p{font-size:14px}
+ .section-head h2{font-size:20px}
+ .news-card h3{font-size:17px}
+ .summary-points{font-size:13px;line-height:2.1}
+ .news-card .card-foot{font-size:11px}
+ .models-header h1{font-size:25px}
+ .models-header>p{font-size:14px}
+}
