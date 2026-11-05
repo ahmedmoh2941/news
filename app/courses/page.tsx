@@ -142,8 +142,7 @@ const courses: Course[] = [
     topic:"البرمجة والنماذج", level:"مبتدئ إلى متقدم", duration:"عدة مقررات ومسارات", price:"توجد مقررات مجانية",
     language:"العربية والإنجليزية حسب المقرر", description:"بوابة مصرية للتعلم التقني تضم مقررات في الذكاء الاصطناعي التوليدي وتعلم الآلة والتطوير.",
     takeaway:"ابدأ من المسارات العربية، ثم اختر تخصصًا تقنيًا مناسبًا.", href:"https://maharatech.gov.eg/course/index.php?categoryid=5&lang=ar", official:true, icon:Library
-  }
-
+  },
   {
     id:"grok-guide", title:"Grok 4.7 – دليل الاستخدام الرسمي", provider:"xAI Documentation",
     topic:"البرمجة والنماذج", level:"مبتدئ", duration:"دليل مرجعي", price:"مجاني",
@@ -216,7 +215,7 @@ const videoCourses = [
  {id:"n8n-academy",tool:"برمجة وأتمتة",title:"n8n Academy – AI Automation",creator:"n8n",lang:"الإنجليزية",level:"مبتدئ إلى متقدم",duration:"4 دورات منظمة",access:"مجاني مع شهادات إتمام وشارات",kind:"دورة منظمة",description:"من أول Workflow وربط التطبيقات وواجهات API إلى بناء AI Agents واختبارها وتصحيحها.",href:"https://n8n.io/education/"},
  {id:"mistral-learn",tool:"برمجة وأتمتة",title:"Learn with Mistral AI",creator:"Mistral AI",lang:"الإنجليزية",level:"مبتدئ إلى متقدم",duration:"دورات وندوات وفيديوهات",access:"تختلف حسب المادة",kind:"دليل رسمي",description:"تعلم نماذج Mistral وStudio وVibe وWorkflows وتطبيقات المطورين.",href:"https://learn.mistral.ai/public/courses"},
  {id:"deepseek-docs",tool:"برمجة وأتمتة",title:"DeepSeek Developer Docs",creator:"DeepSeek",lang:"الإنجليزية",level:"متوسط",duration:"أدلة وأمثلة تطبيقية",access:"الدليل مجاني؛ استخدام API حسب الأسعار",kind:"دليل رسمي",description:"مقدمة إلى API والأمثلة البرمجية وبناء تطبيقات تعتمد على نماذج DeepSeek؛ مورد للمطورين وليس كورس محادثة عام.",href:"https://api-docs.deepseek.com/"},
- {id:"prompting-everyone",tool:"ChatGPT",title:"AI Prompting for Everyone",creator:"DeepLearning.AI – Andrew Ng",lang:"الإنجليزية",level:"مبتدئ",duration:"3 ساعات و4 دقائق • 21 فيديو",access:"التسجيل متاح مجانًا؛ بعض المختبرات والشهادة ضمن PRO",kind:"دورة منظمة",description:"استخدام AI للبحث والكتابة والتفكير والعمل بالصور والبيانات وبناء تطبيقات بسيطة.",href:"https://www.deeplearning.ai/courses/ai-prompting-for-everyone"}
+ {id:"prompting-everyone",tool:"ChatGPT",title:"AI Prompting for Everyone",creator:"DeepLearning.AI – Andrew Ng",lang:"الإنجليزية",level:"مبتدئ",duration:"3 ساعات و4 دقائق • 21 فيديو",access:"التسجيل متاح مجانًا؛ بعض المختبرات والشهادة ضمن PRO",kind:"دورة منظمة",description:"استخدام AI للبحث والكتابة والتفكير والعمل بالصور والبيانات وبناء تطبيقات بسيطة.",href:"https://www.deeplearning.ai/courses/ai-prompting-for-everyone"},
 
  {id:"grok-47-guide",tool:"Grok",title:"Grok 4.7 – Official Product Guide",creator:"xAI Documentation",lang:"الإنجليزية",level:"مبتدئ",duration:"دليل مرجعي",access:"مجاني",kind:"دليل رسمي",description:"شرح المحادثة والبحث وإنشاء الصور والفيديو والصوت ورفع الملفات وربط الأدوات داخل Grok.",href:"https://docs.x.ai/grok/overview"},
  {id:"qwen-max-video",tool:"Qwen",title:"How to Use Qwen 3.8 Max API – Step by Step",creator:"OTorresDev – YouTube",lang:"الإنجليزية",level:"متوسط",duration:"فيديو تطبيقي",access:"مجاني على YouTube؛ API قد يكون مدفوعًا",kind:"فيديو كامل",description:"إنشاء مشروع JavaScript وربط Qwen3.8-Max عبر API وOpenAI SDK وإرسال أول طلب.",href:"https://www.youtube.com/watch?v=AYfShtysvm8"},
