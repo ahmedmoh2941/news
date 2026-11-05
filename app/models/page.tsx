@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { ArrowUpRight, BrainCircuit, Code2, FileText, Image, Search, Sparkles, Video, GraduationCap, BriefcaseBusiness, ChevronRight } from "lucide-react";
+import { ArrowUpRight, Search, Sparkles, ChevronRight } from "lucide-react";
 
 type Item = { name:string; maker:string; kind:string; best:string; use:string; how:string; note:string; url:string; tags:string[] };
 const items: Item[] = [
