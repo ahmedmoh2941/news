@@ -72,3 +72,47 @@ body{background:radial-gradient(ellipse at 80% -20%,#182943 0,transparent 42%),v
 footer{font-size:10px;color:#8493aa}
 @media(max-width:1000px){.news-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.toolbar{flex-wrap:wrap}.searchbox{flex-basis:100%}.filter-btn,.archive-btn{min-height:42px;flex:1}}
 @media(max-width:700px){.main{padding:20px 15px}.topbar h1{font-size:22px}.hero{padding:24px 20px}.hero h2{font-size:23px}.hero-stats{gap:20px}.news-grid{grid-template-columns:1fr}.news-image-wrap,.news-image-placeholder{height:180px}.filter-btn,.archive-btn{font-size:10px;padding:0 9px}}
+
+
+/* Practical models and apps guide */
+.models-link{margin-top:14px;text-decoration:none;border:1px solid #2b4358;background:#12243a;color:#bfe9ed}
+.models-page{max-width:1500px;margin:0 auto;padding:30px 42px 24px;color:var(--text);min-height:100vh}
+.models-header{padding:24px 0 30px;border-bottom:1px solid var(--line)}
+.back-home{display:inline-flex;align-items:center;gap:6px;color:#9bdfe5;text-decoration:none;font-size:12px;margin-bottom:24px}
+.models-kicker{display:flex;align-items:center;gap:7px;color:#82dfe6;font-size:11px;font-weight:800;letter-spacing:.5px}
+.models-header h1{font-size:30px;margin:9px 0 5px}
+.models-header>p{font-size:13px;color:#aab8cb;line-height:2;margin:0;max-width:850px}
+.models-updated{margin-top:12px;font-size:10px;color:#8494aa}
+.quick-picks{padding:25px 0 28px}
+.quick-picks h2,.catalog-title h2{font-size:19px;margin:0 0 14px}
+.pick-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.pick-card{padding:15px;border:1px solid #2b3b51;border-radius:11px;background:linear-gradient(145deg,#121f31,#101827)}
+.pick-card b{display:block;font-size:11px;color:#91a3ba}
+.pick-card strong{display:block;font-size:14px;color:#8ee1e5;margin:7px 0}
+.pick-card p{font-size:11px;line-height:1.8;color:#aab8ca;margin:0}
+.catalog{border-top:1px solid var(--line);padding-top:24px}
+.catalog-title{display:flex;justify-content:space-between;align-items:end;margin-bottom:14px}
+.catalog-title span{font-size:10px;letter-spacing:1.2px;color:#879bb3}
+.catalog-title h2{margin:4px 0 0}
+.catalog-title>b{font-size:11px;color:#9eb1c7}
+.models-tools{display:grid;gap:12px;margin-bottom:17px}
+.models-search{display:flex;align-items:center;gap:10px;padding:0 13px;height:44px;border:1px solid #2b3c52;border-radius:9px;background:#0e1726;color:#8194ad}
+.models-search input{background:transparent;border:0;outline:0;color:var(--text);width:100%;font:12px 'Cairo'}
+.models-filters{display:flex;flex-wrap:wrap;gap:7px}
+.models-filters button{border:1px solid #29394f;background:#0d1725;color:#aab7c9;border-radius:20px;padding:6px 12px;font:10px 'Cairo';cursor:pointer}
+.models-filters button.active{background:#173744;color:#a0e9ed;border-color:#397d88}
+.model-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}
+.model-card{border:1px solid #2a3b51;border-radius:12px;background:linear-gradient(160deg,#121e2e,#0d1624);padding:16px;display:flex;flex-direction:column;min-height:320px}
+.model-card-head{display:flex;justify-content:space-between;align-items:center}
+.model-card-head span{font-size:10px;color:#82dfe6;font-weight:800}
+.model-card-head small{font-size:9px;color:#9aabc0;background:#1b293d;padding:4px 8px;border-radius:20px}
+.model-card h3{font-size:17px;margin:10px 0 13px;direction:ltr;text-align:right}
+.model-best,.model-usage,.model-how{margin-bottom:10px}
+.model-best b,.model-usage b,.model-how b{font-size:10px;color:#89dce3}
+.model-best p,.model-usage p,.model-how p{font-size:11px;line-height:1.85;color:#b4c1d2;margin:3px 0 0}
+.model-note{font-size:10px;line-height:1.8;color:#d2b985;border-top:1px solid #29394d;padding-top:9px;margin-top:auto}
+.model-card>a{display:flex;align-items:center;gap:6px;text-decoration:none;color:#8de2e7;font-size:11px;margin-top:10px}
+.models-empty{padding:35px;text-align:center;color:#9aabc0;border:1px dashed #2a3b51;border-radius:12px}
+.models-footer{border-top:1px solid var(--line);margin-top:30px;padding-top:15px;color:#8090a6;font-size:10px}
+@media(max-width:1000px){.models-page{padding:25px}.model-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.pick-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:650px){.models-page{padding:18px 14px}.models-header h1{font-size:23px}.model-grid,.pick-grid{grid-template-columns:1fr}.catalog-title{align-items:start;gap:8px;flex-direction:column}}
