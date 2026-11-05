@@ -435,6 +435,9 @@ export default function CoursesPage() {
           <a href="https://academy.runway.com/courses" target="_blank" rel="noreferrer"><b>Runway Academy</b><span>أحدث دورات وفيديوهات إنشاء الفيديو والتحريك</span><small>Runway · أكاديمية رسمية</small><ArrowUpRight size={16}/></a>
           <a href="https://www.deepseek.com/en/news/" target="_blank" rel="noreferrer"><b>DeepSeek News</b><span>إعلانات النماذج والتحديثات التقنية</span><small>DeepSeek · أخبار رسمية</small><ArrowUpRight size={16}/></a>
           <a href="https://mistral.ai/news/" target="_blank" rel="noreferrer"><b>Mistral News</b><span>النماذج والأدوات والمنتجات الجديدة</span><small>Mistral AI · أخبار رسمية</small><ArrowUpRight size={16}/></a>
+          <a href="https://x.ai/news/grok-4-7" target="_blank" rel="noreferrer"><b>Grok 4.7</b><span>إصدارات Grok والتحديثات وأدلة الاستخدام الرسمية</span><small>xAI · إعلانات النماذج</small><ArrowUpRight size={16}/></a>
+          <a href="https://qwen.ai/blog/" target="_blank" rel="noreferrer"><b>Qwen News</b><span>إعلانات Qwen3.8 والتحديثات الجديدة للنماذج</span><small>Qwen · أخبار رسمية</small><ArrowUpRight size={16}/></a>
+          <a href="https://research.meta.ai/" target="_blank" rel="noreferrer"><b>Meta AI Research</b><span>Muse Spark ونماذج Meta والبحوث الجديدة</span><small>Meta · بحث وإصدارات</small><ArrowUpRight size={16}/></a>
         </div>
         <p className="fresh-learning-note">ملاحظة: روابط المصادر تتجدد عند نشر الجهات لمواد جديدة. مكتبة AI HUB نفسها حاليًا قائمة ترشيحات مُراجَعة وليست مزامنة تلقائية مع هذه المواقع.</p>
       </section>
