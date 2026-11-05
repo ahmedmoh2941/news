@@ -1,0 +1,58 @@
+"use client";
+
+import { useMemo, useState } from "react";
+import { ArrowUpRight, BrainCircuit, Code2, FileText, Image, Search, Sparkles, Video, GraduationCap, BriefcaseBusiness, ChevronRight } from "lucide-react";
+
+type Item = { name:string; maker:string; kind:string; best:string; use:string; how:string; note:string; url:string; tags:string[] };
+const items: Item[] = [
+  {name:"GPT-6 Astra",maker:"OpenAI",kind:"تفكير وبحث",best:"المهام الصعبة، التحليل العميق، البحث متعدد الخطوات، والبرمجة المعقدة.",use:"عندما تحتاج نتيجة دقيقة ومترابطة أو خطة عمل كاملة من ملفات ومصادر متعددة.",how:"افتح ChatGPT، اختر النموذج الأعلى المتاح في قائمة النماذج، ثم ارفع ملفاتك وحدد المطلوب والنتيجة النهائية.",note:"قد يختلف توفره حسب الخطة أو مساحة العمل.",url:"https://chatgpt.com/",tags:["بحث","تحليل","برمجة"]},
+  {name:"GPT-6.1 Terra",maker:"OpenAI",kind:"استخدام يومي",best:"الكتابة الواضحة، فهم الصور، استخدام الكمبيوتر، والمهام اليومية السريعة.",use:"لإنجاز المهام العملية بسرعة، مثل ترتيب البيانات وشرح مشكلة أو التعامل مع واجهة برنامج.",how:"استخدم ChatGPT، اكتب المطلوب بوضوح، وأرفق صورة الشاشة أو الملف عند الحاجة.",note:"يتوفر في مسارات Work وCodex وفق إعلان OpenAI؛ تحقق من قائمة النماذج داخل حسابك.",url:"https://chatgpt.com/",tags:["كتابة","صور","مهام يومية"]},
+  {name:"Gemini 4 Argon",maker:"Google",kind:"تفكير وبحث",best:"المشروعات المعقدة، تحليل التقارير، البرمجة، والمهام متعددة الخطوات.",use:"مناسب عندما تريد تحويل مجموعة مصادر أو ملفات إلى تقرير أو عرض أو خطة متكاملة.",how:"افتح Gemini، اختر Argon إن كان متاحًا، أرفق ملفاتك، واطلب المخرجات المطلوبة مع مصادرها.",note:"الإتاحة مرتبطة بخطط Google AI Pro وUltra وبعض خدمات المطورين.",url:"https://gemini.google.com/",tags:["بحث","ملفات","برمجة"]},
+  {name:"Gemini 4 Carbon",maker:"Google",kind:"متخصص",best:"الأمن السيبراني والمهام الهندسية طويلة المدى.",use:"نموذج متخصص واعد، وليس الاختيار اليومي لمعظم المستخدمين.",how:"تابع إتاحته الرسمية؛ الإعلان الحالي يصفه كإصدار اختباري محدود لشركاء موثوقين.",note:"ليس متاحًا للجمهور على نطاق واسع حتى الآن.",url:"https://deepmind.google/blog/",tags:["أمن سيبراني","هندسة"]},
+  {name:"Claude Opus 5.5",maker:"Anthropic",kind:"برمجة وكتابة",best:"البرمجة الوكيلة، تحليل المستندات، والمهام المهنية المعقدة.",use:"اختره لمراجعة مشروع برمجي كبير أو صياغة مستند طويل يحتاج تنظيمًا ودقة.",how:"افتح Claude، ارفع الملفات أو أضف سياق المشروع، ثم اطلب خطة قبل تنفيذ التعديلات.",note:"قد تختلف الحدود والميزات حسب الخطة.",url:"https://claude.ai/",tags:["برمجة","كتابة","ملفات"]},
+  {name:"Claude Sonnet 5.5",maker:"Anthropic",kind:"استخدام يومي",best:"التوازن بين الجودة والسرعة والتكلفة في البرمجة والعمل اليومي.",use:"اختيار عملي لمعظم مهام الكتابة والتحليل والكود دون الحاجة لأعلى فئة.",how:"ابدأ بالمهمة مباشرة، واطلب منه عرض الخطوات أو الكود مع شرح مختصر.",note:"تذكر Anthropic أنه أسرع وأقل تكلفة من الجيل السابق وفق إعلانها.",url:"https://claude.ai/",tags:["برمجة","كتابة","تحليل"]},
+  {name:"Claude Haiku 5.5",maker:"Anthropic",kind:"سرعة وتلخيص",best:"التلخيص السريع، تصنيف النصوص، والمهام المتكررة.",use:"مفيد عند معالجة عدد كبير من النصوص أو طلب إجابات سريعة.",how:"أرسل النص أو الملف وحدد طول الملخص وشكل النتيجة المطلوبة.",note:"فئة سريعة للأعمال ذات الحجم الكبير.",url:"https://claude.ai/",tags:["تلخيص","سرعة"]},
+  {name:"ChatGPT Images",maker:"OpenAI",kind:"صور وفيديو",best:"إنشاء الصور وتعديلها وشرح الصور المرفوعة.",use:"لعمل صور تعليمية وتصميم أفكار بصرية وتعديل صورة موجودة.",how:"من ChatGPT اختر إنشاء صورة، اكتب وصفًا يحدد الموضوع والأسلوب والمقاس، ثم اطلب التعديلات.",note:"قد تختلف أدوات الصور المتاحة حسب الخطة.",url:"https://chatgpt.com/",tags:["صور","تصميم"]},
+  {name:"Google Nano Banana 2.1",maker:"Google",kind:"صور وفيديو",best:"إنشاء الصور وتعديلها ضمن منظومة Google.",use:"مناسب للتجارب البصرية وتطوير صورة عبر تعليمات متتابعة.",how:"افتح Gemini أو أداة Google التي تتيح النموذج، أضف وصف الصورة ثم اطلب التعديل المطلوب.",note:"راجع توفر النموذج داخل التطبيق في منطقتك.",url:"https://gemini.google.com/",tags:["صور","تصميم"]},
+  {name:"NotebookLM",maker:"Google",kind:"تعلم وملفات",best:"فهم ملفات PDF والمراجع وتلخيص المحاضرات وبناء أسئلة للمذاكرة.",use:"مفيد جدًا لتحويل ملفات الكورس والمراجع إلى ملخص منظم وأسئلة مراجعة.",how:"أنشئ دفترًا جديدًا، أضف ملفات PDF أو روابط المصادر، ثم اسأل عن الملخص أو اطلب أسئلة واختبارًا.",note:"يعتمد على المصادر التي تضيفها؛ راجع الاقتباسات قبل اعتماد المعلومات.",url:"https://notebooklm.google.com/",tags:["تعليم","PDF","تلخيص"]},
+  {name:"Perplexity",maker:"Perplexity",kind:"بحث ومصادر",best:"البحث على الويب مع عرض المصادر والروابط.",use:"لجمع أحدث المعلومات ومقارنة المنتجات والأخبار والتحقق من الادعاءات.",how:"اكتب سؤالًا محددًا، افتح المصادر المرتبطة، وقارن المعلومات المهمة من أكثر من مصدر.",note:"تحقق من المصدر الأصلي خاصة في الأخبار والمعلومات الحساسة.",url:"https://www.perplexity.ai/",tags:["بحث","مصادر","أخبار"]},
+  {name:"Cursor",maker:"Cursor",kind:"برمجة وكتابة",best:"تطوير المشاريع البرمجية والعمل داخل ملفات الكود.",use:"لمن يريد تعديل مشروع كامل وفهم الملفات وتشغيل اختبارات من محرر واحد.",how:"افتح مجلد المشروع في Cursor، راجع خطة التغييرات التي يقترحها، ثم اختبر التعديلات قبل اعتمادها.",note:"أداة تطوير وليست مجرد روبوت محادثة.",url:"https://cursor.com/",tags:["برمجة","تطوير"]},
+  {name:"Veo",maker:"Google",kind:"صور وفيديو",best:"إنشاء مقاطع فيديو من وصف نصي أو مراجع بصرية بحسب الإصدار المتاح.",use:"لإنتاج مشاهد قصيرة ومحتوى بصري تجريبي.",how:"اكتب وصف المشهد والحركة وزاوية الكاميرا والمدة، ثم راجع الناتج وعدّل الوصف.",note:"الإصدارات والحدود تختلف حسب المنتج والخطة.",url:"https://deepmind.google/models/veo/",tags:["فيديو","إبداع"]}
+];
+const categories = ["الكل","تفكير وبحث","برمجة وكتابة","استخدام يومي","سرعة وتلخيص","تعلم وملفات","صور وفيديو","بحث ومصادر","متخصص"];
+const picks = [
+  ["بحث موثق على الإنترنت","Perplexity","يجمع نتائج الويب ويعرض روابط المصادر."],
+  ["تحليل صعب ومهام متعددة الخطوات","GPT-6 Astra أو Gemini 4 Argon","ابدأ بتحديد المطلوب والملفات وشكل التسليم."],
+  ["برمجة مشروع كامل","Claude Opus 5.5 أو Cursor","اطلب خطة أولًا، ثم نفّذ واختبر كل تغيير."],
+  ["تلخيص محاضرات وملفات PDF","NotebookLM","ارفع المصادر واطلب ملخصًا وأسئلة مراجعة."],
+  ["إنشاء صورة","ChatGPT Images أو Nano Banana","صف العناصر والأسلوب والمقاس بوضوح."],
+  ["إنشاء فيديو","Veo","حدد المشهد والحركة والمدة ونمط التصوير."]
+];
+
+export default function ModelsPage(){
+ const [category,setCategory]=useState("الكل");
+ const [query,setQuery]=useState("");
+ const shown=useMemo(()=>items.filter(x=>(category==="الكل"||x.kind===category)&&[x.name,x.maker,x.best,x.use,...x.tags].join(" ").toLowerCase().includes(query.toLowerCase())),[category,query]);
+ return <main className="models-page" dir="rtl">
+  <header className="models-header">
+   <a className="back-home" href="/"><ChevronRight size={17}/> العودة للأخبار</a>
+   <span className="models-kicker"><Sparkles size={15}/> AI HUB • دليل الاستخدام العملي</span>
+   <h1>أفضل نماذج وتطبيقات الذكاء الاصطناعي</h1>
+   <p>مش لازم تعرف كل النماذج؛ اختار الأداة حسب المهمة. هنا هتلاقي كل نموذج بيعمل إيه، إمتى تستخدمه، وتبدأ إزاي.</p>
+   <div className="models-updated">آخر مراجعة: 5 نوفمبر 2026 • التوفر قد يختلف حسب الدولة والخطة</div>
+  </header>
+  <section className="quick-picks">
+   <h2>اختار حسب استخدامك</h2>
+   <div className="pick-grid">{picks.map(([task,name,desc])=><article className="pick-card" key={task}><b>{task}</b><strong>{name}</strong><p>{desc}</p></article>)}</div>
+  </section>
+  <section className="catalog">
+   <div className="catalog-title"><div><span>MODEL & APP DIRECTORY</span><h2>دليل النماذج والتطبيقات</h2></div><b>{shown.length} أداة</b></div>
+   <div className="models-tools"><label className="models-search"><Search size={17}/><input value={query} onChange={e=>setQuery(e.target.value)} placeholder="ابحث عن نموذج أو استخدام..."/></label><div className="models-filters">{categories.map(x=><button key={x} onClick={()=>setCategory(x)} className={category===x?"active":""}>{x}</button>)}</div></div>
+   <div className="model-grid">{shown.map(x=><article className="model-card" key={x.name}>
+    <div className="model-card-head"><span>{x.maker}</span><small>{x.kind}</small></div><h3>{x.name}</h3><div className="model-best"><b>الأفضل في</b><p>{x.best}</p></div><div className="model-usage"><b>تستخدمه إمتى؟</b><p>{x.use}</p></div><div className="model-how"><b>طريقة الاستخدام</b><p>{x.how}</p></div><div className="model-note">{x.note}</div><a href={x.url} target="_blank" rel="noreferrer">افتح التطبيق أو الموقع <ArrowUpRight size={15}/></a>
+   </article>)}</div>
+   {shown.length===0&&<div className="models-empty">مفيش نتائج مطابقة. جرّب كلمة بحث مختلفة.</div>}
+  </section>
+  <footer className="models-footer">AI HUB • دليل عملي قابل للتحديث مع ظهور نماذج وأدوات جديدة</footer>
+ </main>
+}
