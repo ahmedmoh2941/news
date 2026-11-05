@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { Activity, Archive, Bookmark, Bot, BrainCircuit, CalendarDays, Clock3, ExternalLink, Filter, History, Image as ImageIcon, Layers3, Newspaper, Search, Sparkles, Wrench, ChevronDown } from "lucide-react";
 import { supabase } from "@/lib/supabase";
-import { GraduationCap, BookOpen } from "lucide-react";
+import { GraduationCap, BookOpen, Library } from "lucide-react";
 
 type Article = { id: string; title: string; summary: string | null; source_name: string; source_url: string; category: string; published_at: string | null; image_url: string | null };
 const PAGE_SIZE = 50;
@@ -70,6 +70,7 @@ export default function Home() {
   return <main className="shell">
     <aside className="sidebar">
       <div className="brand"><div className="brand-mark"><BrainCircuit size={25}/></div><div><b>AI HUB</b><small>منصة المعرفة والابتكار</small></div></div>
+      <a className="nav-item models-link courses-nav-link" href="/courses"><Library size={18}/><span>كورسات تعلم AI</span><i>ابدأ هنا</i></a>
       <div className="side-label">استكشف المحتوى</div>
       <nav>{sections.map((s,i)=><button key={s} onClick={()=>setActive(s)} className={active===s?"nav-item selected":"nav-item"}>{[<Layers3/>,<Newspaper/>,<Bot/>,<Wrench/>,<ImageIcon/>,<Activity/>,<Sparkles/>][i]}<span>{sectionNames[s]}</span>{active===s&&<i/>}</button>)}</nav>
       <a className="nav-item models-link" href="/models"><BrainCircuit size={17}/><span>أفضل النماذج والتطبيقات</span></a>
@@ -79,7 +80,7 @@ export default function Home() {
     </aside>
     <section className="main">
       <header className="topbar"><div><span className="eyebrow">AI INTELLIGENCE & TECHNOLOGY BRIEFING</span><h1>مرجعك لمستجدات <em>الذكاء الاصطناعي</em></h1><p>تغطية منظمة لأحدث الأخبار والنماذج والأدوات والأبحاث من مصادرها الأصلية.</p></div><div className="top-actions"><span className="date-chip"><CalendarDays size={15}/> {today || "اليوم"}</span><div className="avatar">AI</div></div></header>
-      <div className="hero"><div className="hero-glow"/><div className="hero-content"><span className="hero-tag"><Sparkles size={14}/> ARTIFICIAL INTELLIGENCE INSIGHT</span><h2>الصورة الكاملة لعالم <strong>AI</strong></h2><p>تابع كل تحديث بتفاصيله المهمة: أبرز المستجدات، المزايا، الاستخدامات، والتأثير العملي — مع روابط المصادر والصور التوضيحية عند توفرها.</p><div className="hero-stats"><div><b>06</b><small>مجالات للتغطية</small></div><div><b>FULL</b><small>ملخصات دون حذف النقاط</small></div><div><b>AR</b><small>محتوى عربي واضح</small></div></div></div><div className="hero-art"><div className="orbit orbit-one"/><div className="orbit orbit-two"/><div className="core"><BrainCircuit size={62}/></div><span className="float-chip chip-a">GPT</span><span className="float-chip chip-b">AI</span><span className="float-chip chip-c">LLM</span></div></div>
+      <div className="hero"><div className="hero-glow"/><div className="hero-content"><span className="hero-tag"><Sparkles size={14}/> ARTIFICIAL INTELLIGENCE INSIGHT</span><a className="hero-course-link" href="/courses"><GraduationCap size={15}/> ابدأ التعلم من مكتبة الكورسات <ExternalLink size={13}/></a><h2>الصورة الكاملة لعالم <strong>AI</strong></h2><p>تابع كل تحديث بتفاصيله المهمة: أبرز المستجدات، المزايا، الاستخدامات، والتأثير العملي — مع روابط المصادر والصور التوضيحية عند توفرها.</p><div className="hero-stats"><div><b>06</b><small>مجالات للتغطية</small></div><div><b>FULL</b><small>ملخصات دون حذف النقاط</small></div><div><b>AR</b><small>محتوى عربي واضح</small></div></div></div><div className="hero-art"><div className="orbit orbit-one"/><div className="orbit orbit-two"/><div className="core"><BrainCircuit size={62}/></div><span className="float-chip chip-a">GPT</span><span className="float-chip chip-b">AI</span><span className="float-chip chip-c">LLM</span></div></div>
       <div className="section-head"><div><span className="eyebrow">{archiveMode?"NEWS ARCHIVE":"LATEST COVERAGE"}</span><h2>{archiveMode?"أرشيف الأخبار السابقة":"آخر الأخبار والتحديثات"}</h2><p>{archiveMode?"ارجع إلى الأخبار والتحديثات المنشورة قبل اليوم.":"الأحدث أولًا، مع الاحتفاظ بالتفاصيل والنقاط المهمة لكل خبر."}</p></div><div className="feed-status"><span className="pulse"/> {filtered.length} خبرًا معروضًا</div></div>
       <div className="toolbar"><div className="searchbox"><Search size={18}/><input value={query} onChange={e=>setQuery(e.target.value)} placeholder="ابحث في الأخبار والنماذج والأدوات..."/></div><button className="filter-btn" onClick={()=>setActive("الكل")}><Filter size={16}/> كل التصنيفات</button><button className={archiveMode?"archive-btn active":"archive-btn"} onClick={()=>setArchiveMode(v=>!v)}><History size={17}/>{archiveMode?"العودة لآخر التحديثات":"الأرشيف"}<span>{archiveCount}</span></button></div>
       <div className="chips">{sections.map(s=><button key={s} onClick={()=>setActive(s)} className={active===s?"chip active":"chip"}>{sectionNames[s]}</button>)}</div>
