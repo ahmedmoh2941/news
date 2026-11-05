@@ -6,6 +6,7 @@ import { supabase } from "@/lib/supabase";
 
 type Article = { id: string; title: string; summary: string | null; source_name: string; source_url: string; category: string; published_at: string | null; image_url: string | null };
 const PAGE_SIZE = 50;
+const START_DATE = "2026-11-01T00:00:00+02:00";
 const sections = ["الكل", "AI News", "AI Models", "AI Tools", "AI Image & Video", "AI Research", "Companies Updates"];
 const sectionNames: Record<string,string> = { "الكل":"كل الأخبار", "AI News":"أخبار الذكاء الاصطناعي", "AI Models":"النماذج", "AI Tools":"الأدوات", "AI Image & Video":"الصورة والفيديو", "AI Research":"الأبحاث", "Companies Updates":"تحديثات الشركات" };
 
@@ -35,7 +36,7 @@ export default function Home() {
     let alive = true;
     async function load(){
       if(!supabase){setLoading(false);return;}
-      const {data,error}=await supabase.from("articles").select("id,title,summary,source_name,source_url,category,published_at,image_url").eq("status","published").order("published_at",{ascending:false}).range(0,PAGE_SIZE-1);
+      const {data,error}=await supabase.from("articles").select("id,title,summary,source_name,source_url,category,published_at,image_url").eq("status","published").gte("published_at",START_DATE).order("published_at",{ascending:false}).range(0,PAGE_SIZE-1);
       if(alive){if(!error && data){setArticles(data as Article[]);setHasMore(data.length===PAGE_SIZE);}setLoading(false);}
     }
     load(); return ()=>{alive=false};
@@ -70,6 +71,7 @@ export default function Home() {
       <div className="brand"><div className="brand-mark"><BrainCircuit size={25}/></div><div><b>AI HUB</b><small>منصة المعرفة والابتكار</small></div></div>
       <div className="side-label">استكشف المحتوى</div>
       <nav>{sections.map((s,i)=><button key={s} onClick={()=>setActive(s)} className={active===s?"nav-item selected":"nav-item"}>{[<Layers3/>,<Newspaper/>,<Bot/>,<Wrench/>,<ImageIcon/>,<Activity/>,<Sparkles/>][i]}<span>{sectionNames[s]}</span>{active===s&&<i/>}</button>)}</nav>
+      <a className="nav-item models-link" href="/models"><BrainCircuit size={17}/><span>أفضل النماذج والتطبيقات</span></a>
       <div className="sidebar-bottom"><div className="live-dot"/> <span>مكتبة AI HUB</span><small>أخبار • نماذج • أدوات • أبحاث</small></div>
     </aside>
     <section className="main">
