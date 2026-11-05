@@ -188,7 +188,19 @@ const learningHubs = [
   {name:"Hugging Face Learn",by:"Hugging Face",what:"مسارات LLM وAgents وComputer Vision وAudio والنماذج المفتوحة.",type:"تعلم تقني",lang:"الإنجليزية.",url:"https://huggingface.co/learn"},
   {name:"Microsoft Learn",by:"Microsoft",what:"وحدات قصيرة ومسارات في AI التوليدي وCopilot وAgents وAzure AI.",type:"منصة تعلم رسمية",lang:"بعض الصفحات تتوفر بلغات مختلفة؛ راجع إعداد اللغة.",url:"https://learn.microsoft.com/training/"},
   {name:"Elements of AI",by:"University of Helsinki / MinnaLearn",what:"مقرر تأسيسي لفهم الذكاء الاصطناعي وتعلم الآلة وتطبيقاته.",type:"مساق تأسيسي",lang:"تتوفر لغات متعددة؛ راجع جودة النسخة العربية.",url:"https://course.elementsofai.com/"},
-  {name:"Google Skills",by:"Google Cloud",what:"مسارات عملية ومختبرات وشارات مهارية مرتبطة بـ Gemini وVertex AI.",type:"تعلم ومختبرات",lang:"لغة كل نشاط موضحة داخل المسار.",url:"https://www.skills.google/"}
+  {name:"Google Skills",by:"Google Cloud",what:"مسارات عملية ومختبرات وشارات مهارية مرتبطة بـ Gemini وVertex AI.",type:"تعلم ومختبرات",lang:"لغة كل نشاط موضحة داخل المسار.",url:"https://www.skills.google/"},
+
+  {name:"NotebookLM Help",by:"Google",what:"شرح إضافة المصادر وإنشاء الدفاتر والملخصات والمراجع والميزات الجديدة.",type:"دليل رسمي",lang:"العربية متاحة لبعض المقالات.",url:"https://support.google.com/notebooklm/?hl=ar"},
+  {name:"Perplexity Help Center",by:"Perplexity",what:"شرح البحث بالمصادر وSpaces والملفات والخصائص المتاحة.",type:"دليل رسمي",lang:"الإنجليزية.",url:"https://www.perplexity.ai/help-center"},
+  {name:"Microsoft Copilot Learning",by:"Microsoft",what:"مسارات Copilot Chat وكتابة الأوامر وتحليل البيانات والعمل مع تطبيقات Microsoft 365.",type:"مركز تعلم رسمي",lang:"اللغة تختلف حسب المسار.",url:"https://support.microsoft.com/en-us/microsoft-365-copilot/index"},
+  {name:"Runway Academy",by:"Runway",what:"دورات وفيديوهات حديثة لصناعة الفيديو والإعلانات والتحريك وسير العمل.",type:"أكاديمية رسمية",lang:"الإنجليزية.",url:"https://academy.runway.com/courses"},
+  {name:"Canva Design School",by:"Canva",what:"دورات AI Essentials وWork smarter with AI والتصميم والعروض.",type:"أكاديمية رسمية",lang:"تحقق من لغة الدورة.",url:"https://www.canva.com/design-school/courses/"},
+  {name:"Cursor Learn",by:"Cursor",what:"دروس AI Foundations وCoding Agents وفهم المشاريع وإصلاح الأخطاء.",type:"مسار تفاعلي رسمي",lang:"الإنجليزية.",url:"https://cursor.com/learn"},
+  {name:"n8n Academy",by:"n8n",what:"دورات عملية مجانية في الأتمتة وربط التطبيقات والوكلاء مع شارات إتمام.",type:"أكاديمية رسمية",lang:"الإنجليزية.",url:"https://n8n.io/education/"},
+  {name:"Mistral Learn",by:"Mistral AI",what:"دورات وندوات ومواد تعلم عن نماذج Mistral وStudio وVibe.",type:"أكاديمية رسمية",lang:"الإنجليزية.",url:"https://learn.mistral.ai/public/courses"},
+  {name:"DeepSeek API Docs",by:"DeepSeek",what:"أدلة API وتحديثات النماذج وأمثلة للمطورين.",type:"وثائق رسمية",lang:"الإنجليزية.",url:"https://api-docs.deepseek.com/"},
+  {name:"Midjourney Documentation",by:"Midjourney",what:"دليل إنشاء الصور والفيديو والتخصيص وكتابة الأوامر.",type:"وثائق رسمية",lang:"الإنجليزية.",url:"https://docs.midjourney.com/"}
+
 ];
 
 export default function CoursesPage() {
@@ -350,7 +362,24 @@ export default function CoursesPage() {
         {filtered.length>8 && <div className="show-more-wrap"><button onClick={()=>setShowAll(v=>!v)}>{showAll?"عرض عدد أقل":"عرض باقي الكورسات"} <ArrowLeft size={16}/></button></div>}
       </section>
 
-      <section className="hubs-section" id="learning-hubs">
+
+      <section className="fresh-learning-section" id="fresh-learning">
+        <div className="section-intro">
+          <span><Sparkles size={14}/> الجديد ومصادر المتابعة</span>
+          <h2>تابع أحدث الشروحات والميزات</h2>
+          <p>روابط مباشرة إلى صفحات التحديثات والفيديوهات الرسمية؛ افتحها لمشاهدة أحدث المواد عند صدورها بدل الاعتماد على فيديو قديم لواجهة تغيرت.</p>
+        </div>
+        <div className="fresh-learning-grid">
+          <a href="https://learn.chatgpt.com/videos" target="_blank" rel="noreferrer"><b>ChatGPT وCodex</b><span>فيديوهات أحدث الميزات وسير العمل</span><small>OpenAI · فيديوهات رسمية</small><ArrowUpRight size={16}/></a>
+          <a href="https://academy.claude.com/courses" target="_blank" rel="noreferrer"><b>Claude Academy</b><span>Claude Cowork وClaude Code وMCP ومسارات جديدة</span><small>Anthropic · أكاديمية رسمية</small><ArrowUpRight size={16}/></a>
+          <a href="https://support.google.com/gemini/?hl=ar" target="_blank" rel="noreferrer"><b>Gemini Apps Help</b><span>التحديثات وCanvas وDeep Research والتعلم الموجّه</span><small>Google · دليل عربي رسمي</small><ArrowUpRight size={16}/></a>
+          <a href="https://academy.runway.com/courses" target="_blank" rel="noreferrer"><b>Runway Academy</b><span>أحدث دورات وفيديوهات إنشاء الفيديو والتحريك</span><small>Runway · أكاديمية رسمية</small><ArrowUpRight size={16}/></a>
+          <a href="https://www.deepseek.com/en/news/" target="_blank" rel="noreferrer"><b>DeepSeek News</b><span>إعلانات النماذج والتحديثات التقنية</span><small>DeepSeek · أخبار رسمية</small><ArrowUpRight size={16}/></a>
+          <a href="https://mistral.ai/news/" target="_blank" rel="noreferrer"><b>Mistral News</b><span>النماذج والأدوات والمنتجات الجديدة</span><small>Mistral AI · أخبار رسمية</small><ArrowUpRight size={16}/></a>
+        </div>
+        <p className="fresh-learning-note">ملاحظة: روابط المصادر تتجدد عند نشر الجهات لمواد جديدة. مكتبة AI HUB نفسها حاليًا قائمة ترشيحات مُراجَعة وليست مزامنة تلقائية مع هذه المواقع.</p>
+      </section>
+\n      <section className="hubs-section" id="learning-hubs">
         <div className="section-intro"><span>مواقع وأكاديميات</span><h2>مصادر تتعلم منها باستمرار</h2><p>بعضها يقدم كورسات كاملة، وبعضها مكتبات شرح رسمية لطريقة استخدام التطبيق وخصائصه.</p></div>
         <div className="hub-grid">
           {learningHubs.map((h)=><article className="hub-card" key={h.name}>
