@@ -143,11 +143,54 @@ const courses: Course[] = [
     language:"العربية والإنجليزية حسب المقرر", description:"بوابة مصرية للتعلم التقني تضم مقررات في الذكاء الاصطناعي التوليدي وتعلم الآلة والتطوير.",
     takeaway:"ابدأ من المسارات العربية، ثم اختر تخصصًا تقنيًا مناسبًا.", href:"https://maharatech.gov.eg/course/index.php?categoryid=5&lang=ar", official:true, icon:Library
   }
+
+  {
+    id:"grok-guide", title:"Grok 4.7 – دليل الاستخدام الرسمي", provider:"xAI Documentation",
+    topic:"البرمجة والنماذج", level:"مبتدئ", duration:"دليل مرجعي", price:"مجاني",
+    language:"الإنجليزية", description:"شرح استخدام Grok للمحادثة والبحث وإنشاء الصور والفيديو والصوت ورفع الملفات وربط الأدوات.",
+    takeaway:"مرجع رسمي لتعلم التطبيق ومراجعة خصائصه الحالية.", href:"https://docs.x.ai/grok/overview", official:true, icon:Bot
+  },
+  {
+    id:"qwen-api-video", title:"How to Use Qwen 3.8 Max API – Step by Step", provider:"OTorresDev – YouTube",
+    topic:"البرمجة والنماذج", level:"متوسط", duration:"فيديو تطبيقي", price:"مجاني على YouTube؛ API قد يكون مدفوعًا",
+    language:"الإنجليزية", description:"إنشاء مشروع JavaScript وربط Qwen3.8-Max عبر API وOpenAI SDK وإرسال أول طلب.",
+    takeaway:"مناسب للمطورين، وليس كورسًا عامًا للمستخدم العادي.", href:"https://www.youtube.com/watch?v=AYfShtysvm8", official:false, icon:PlayCircle
+  },
+  {
+    id:"qwen-docs", title:"Qwen3.8 – الدليل الرسمي للنماذج", provider:"Qwen / QwenCloud",
+    topic:"البرمجة والنماذج", level:"متوسط", duration:"توثيق وأمثلة API", price:"الوثائق مجانية؛ استخدام API حسب الأسعار والمنطقة",
+    language:"الإنجليزية", description:"مواصفات Qwen3.8-Max وFlash، السياق، الاستدلال، الرؤية، استدعاء الأدوات وطرق الدمج.",
+    takeaway:"اعتمد على التوثيق الرسمي لتأكيد أسماء النماذج والإتاحة والسعر.", href:"https://docs.qwencloud.com/changelog/models", official:true, icon:Code2
+  },
+  {
+    id:"meta-muse-build", title:"Build and Deploy with Muse Spark", provider:"Meta Connect – Session",
+    topic:"البرمجة والنماذج", level:"متوسط إلى متقدم", duration:"جلسة فيديو تقنية", price:"مجاني",
+    language:"الإنجليزية", description:"جلسة تطبيقية عن Muse Code وMeta Model API ومسارات الدمج والنشر وتحويل النموذج إلى تطبيق عملي.",
+    takeaway:"مصدر مناسب للمطورين بعد فهم أساسيات النماذج وواجهات API.", href:"https://developers.meta.com/resources/videos/build-and-deploy-with-muse-spark/", official:true, icon:PlayCircle
+  },
+  {
+    id:"meta-muse-docs", title:"Muse Spark Open – Quickstart & Prompting Guide", provider:"Meta Model API",
+    topic:"البرمجة والنماذج", level:"متوسط إلى متقدم", duration:"دليل ومختبرات قصيرة", price:"الوثائق مجانية؛ الاستضافة والـ API حسب المزود",
+    language:"الإنجليزية", description:"أول طلب API، كتابة System Prompts، ضبط الاستدلال، استدعاء الأدوات، وفهم الصور والفيديو والصوت.",
+    takeaway:"مرجع رسمي لاستخدام النموذج المفتوح عبر مزود مستضاف أو بنية ذاتية.", href:"https://dev.meta.ai/docs/overview", official:true, icon:Code2
+  },
+  {
+    id:"deepseek-v41-video", title:"DeepSeek V4.1 Flash – Setup and API Tutorial", provider:"Akash Singh – YouTube",
+    topic:"البرمجة والنماذج", level:"متوسط", duration:"فيديو تطبيقي قصير", price:"مجاني على YouTube؛ بعض المنصات لها حدود أو رسوم",
+    language:"الإنجليزية", description:"شرح خطوة بخطوة لبدء استخدام DeepSeek V4.1 Flash وربطه بأدوات ومهام برمجية عبر API.",
+    takeaway:"الفيديو يشرح منصة وسيطة؛ راجع أسعار DeepSeek API الأصلية قبل الاعتماد عليها.", href:"https://www.youtube.com/watch?v=Rimpba7xd_k", official:false, icon:PlayCircle
+  },
+  {
+    id:"mistral-workflows", title:"Build your First Workflow with Mistral", provider:"Mistral Learn",
+    topic:"الأتمتة", level:"متوسط", duration:"فيديو 5 دقائق و42 ثانية", price:"مجاني للمشاهدة؛ تشغيل المنصة حسب الخطة",
+    language:"الإنجليزية", description:"عرض عملي لبناء أول Workflow باستخدام Mistral Python SDK وتنظيم تنفيذ مهام AI ومتابعتها.",
+    takeaway:"مدخل تطبيقي إلى منظومة Mistral Workflows.", href:"https://learn.mistral.ai/", official:true, icon:Workflow
+  },
 ];
 
 
 type VideoLanguage = "الكل" | "العربية" | "الإنجليزية";
-type VideoTool = "الكل" | "ChatGPT" | "Gemini" | "Claude" | "NotebookLM" | "Copilot" | "Perplexity" | "صور وفيديو" | "برمجة وأتمتة";
+type VideoTool = "الكل" | "ChatGPT" | "Gemini" | "Claude" | "NotebookLM" | "Copilot" | "Perplexity" | "Grok" | "Qwen" | "Meta" | "DeepSeek" | "Mistral" | "صور وفيديو" | "برمجة وأتمتة";
 const videoCourses = [
  {id:"chatgpt-ar",tool:"ChatGPT",title:"ChatGPT من الصفر إلى الاستخدام العملي",creator:"فتحي وأبوسريع – YouTube",lang:"العربية",level:"مبتدئ",duration:"حوالي 1.5 ساعة",access:"مجاني على YouTube",kind:"فيديو كامل",description:"شرح الحساب والواجهة والنماذج ورفع الملفات والصوت والمشروعات وكتابة Prompts واستخدامات الدراسة والعمل.",href:"https://www.youtube.com/watch?v=kELkBDg_uyo"},
  {id:"openai-ar",tool:"ChatGPT",title:"انطلق مع ChatGPT – الدليل الرسمي",creator:"OpenAI Academy",lang:"العربية",level:"مبتدئ",duration:"شرح تمهيدي",access:"مجاني",kind:"دورة منظمة",description:"أول محادثة واستكشاف واجهة ChatGPT من شرح رسمي عربي.",href:"https://openai.com/ar/academy/getting-started/"},
@@ -174,6 +217,14 @@ const videoCourses = [
  {id:"mistral-learn",tool:"برمجة وأتمتة",title:"Learn with Mistral AI",creator:"Mistral AI",lang:"الإنجليزية",level:"مبتدئ إلى متقدم",duration:"دورات وندوات وفيديوهات",access:"تختلف حسب المادة",kind:"دليل رسمي",description:"تعلم نماذج Mistral وStudio وVibe وWorkflows وتطبيقات المطورين.",href:"https://learn.mistral.ai/public/courses"},
  {id:"deepseek-docs",tool:"برمجة وأتمتة",title:"DeepSeek Developer Docs",creator:"DeepSeek",lang:"الإنجليزية",level:"متوسط",duration:"أدلة وأمثلة تطبيقية",access:"الدليل مجاني؛ استخدام API حسب الأسعار",kind:"دليل رسمي",description:"مقدمة إلى API والأمثلة البرمجية وبناء تطبيقات تعتمد على نماذج DeepSeek؛ مورد للمطورين وليس كورس محادثة عام.",href:"https://api-docs.deepseek.com/"},
  {id:"prompting-everyone",tool:"ChatGPT",title:"AI Prompting for Everyone",creator:"DeepLearning.AI – Andrew Ng",lang:"الإنجليزية",level:"مبتدئ",duration:"3 ساعات و4 دقائق • 21 فيديو",access:"التسجيل متاح مجانًا؛ بعض المختبرات والشهادة ضمن PRO",kind:"دورة منظمة",description:"استخدام AI للبحث والكتابة والتفكير والعمل بالصور والبيانات وبناء تطبيقات بسيطة.",href:"https://www.deeplearning.ai/courses/ai-prompting-for-everyone"}
+
+ {id:"grok-47-guide",tool:"Grok",title:"Grok 4.7 – Official Product Guide",creator:"xAI Documentation",lang:"الإنجليزية",level:"مبتدئ",duration:"دليل مرجعي",access:"مجاني",kind:"دليل رسمي",description:"شرح المحادثة والبحث وإنشاء الصور والفيديو والصوت ورفع الملفات وربط الأدوات داخل Grok.",href:"https://docs.x.ai/grok/overview"},
+ {id:"qwen-max-video",tool:"Qwen",title:"How to Use Qwen 3.8 Max API – Step by Step",creator:"OTorresDev – YouTube",lang:"الإنجليزية",level:"متوسط",duration:"فيديو تطبيقي",access:"مجاني على YouTube؛ API قد يكون مدفوعًا",kind:"فيديو كامل",description:"إنشاء مشروع JavaScript وربط Qwen3.8-Max عبر API وOpenAI SDK وإرسال أول طلب.",href:"https://www.youtube.com/watch?v=AYfShtysvm8"},
+ {id:"qwen-docs-video",tool:"Qwen",title:"QwenCloud Model Changelog & API Guides",creator:"Qwen",lang:"الإنجليزية",level:"متوسط",duration:"توثيق وأمثلة",access:"الوثائق مجانية؛ استخدام API حسب الأسعار والمنطقة",kind:"دليل رسمي",description:"مواصفات Qwen3.8-Max وFlash والسياق والاستدلال والرؤية واستدعاء الأدوات وطرق الدمج.",href:"https://docs.qwencloud.com/changelog/models"},
+ {id:"meta-muse-video",tool:"Meta",title:"Build and Deploy with Muse Spark",creator:"Meta Connect – Session",lang:"الإنجليزية",level:"متوسط إلى متقدم",duration:"جلسة فيديو تقنية",access:"مجاني",kind:"فيديو كامل",description:"جلسة تطبيقية عن Muse Code وMeta Model API ومسارات الدمج والنشر وتحويل النموذج إلى تطبيق عملي.",href:"https://developers.meta.com/resources/videos/build-and-deploy-with-muse-spark/"},
+ {id:"meta-muse-guide",tool:"Meta",title:"Muse Spark Open – Quickstart & Prompting Guide",creator:"Meta Model API",lang:"الإنجليزية",level:"متوسط إلى متقدم",duration:"دليل ومختبرات قصيرة",access:"الوثائق مجانية؛ الاستضافة والـ API حسب المزود",kind:"دليل رسمي",description:"أول طلب API، كتابة System Prompts، ضبط الاستدلال، استدعاء الأدوات، وفهم الصور والفيديو والصوت.",href:"https://dev.meta.ai/docs/overview"},
+ {id:"deepseek-flash-video",tool:"DeepSeek",title:"DeepSeek V4.1 Flash – Setup and API Tutorial",creator:"Akash Singh – YouTube",lang:"الإنجليزية",level:"متوسط",duration:"فيديو تطبيقي قصير",access:"مجاني على YouTube؛ بعض المنصات لها حدود أو رسوم",kind:"فيديو كامل",description:"شرح خطوة بخطوة لبدء استخدام DeepSeek V4.1 Flash وربطه بأدوات ومهام برمجية عبر API.",href:"https://www.youtube.com/watch?v=Rimpba7xd_k"},
+ {id:"mistral-workflow-video",tool:"Mistral",title:"Build your First Workflow with Mistral",creator:"Mistral Learn",lang:"الإنجليزية",level:"متوسط",duration:"فيديو 5 دقائق و42 ثانية",access:"مجاني للمشاهدة؛ تشغيل المنصة حسب الخطة",kind:"فيديو كامل",description:"عرض عملي لبناء أول Workflow باستخدام Mistral Python SDK وتنظيم مهام AI.",href:"https://learn.mistral.ai/"}
 ];
 
 const topics = ["الكل","أساسيات AI","ChatGPT","Gemini","Claude","NotebookLM","Copilot","Perplexity","صور وفيديو","العمل والإنتاجية","البرمجة والنماذج","الأتمتة"];
@@ -311,7 +362,7 @@ export default function CoursesPage() {
         <div className="video-filter-block">
           <span>اختر المنصة</span>
           <div className="video-language-tabs">
-            {(["الكل","ChatGPT","Gemini","Claude","NotebookLM","Copilot","Perplexity","صور وفيديو","برمجة وأتمتة"] as VideoTool[]).map(t=><button key={t} onClick={()=>setVideoTool(t)} className={videoTool===t?"active":""}>{t}</button>)}
+            {(["الكل","ChatGPT","Gemini","Claude","NotebookLM","Copilot","Perplexity","Grok","Qwen","Meta","DeepSeek","Mistral","صور وفيديو","برمجة وأتمتة"] as VideoTool[]).map(t=><button key={t} onClick={()=>setVideoTool(t)} className={videoTool===t?"active":""}>{t}</button>)}
           </div>
           <span>لغة المحتوى</span>
           <div className="video-language-tabs">
