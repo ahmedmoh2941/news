@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
+import "./ui-refresh.css";
 import { PWARegister } from "./pwa-tools";
 import PWAInstallButton from "./pwa-tools";
 
