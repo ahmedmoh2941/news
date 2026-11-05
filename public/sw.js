@@ -1,5 +1,5 @@
 const CACHE_VERSION = "ai-hub-pwa-v1";
-const APP_SHELL = ["/", "/courses", "/models", "/guide", "/lessons", "/offline.html", "/icon.svg", "/pwa-icon-192", "/pwa-icon-512"];
+const APP_SHELL = ["/", "/courses", "/models", "/guide", "/lessons", "/offline.html", "/manifest.webmanifest", "/icon.svg", "/pwa-icon-192", "/pwa-icon-512", "/pwa-icon-maskable-512"];
 
 self.addEventListener("install", event => {
   event.waitUntil(
