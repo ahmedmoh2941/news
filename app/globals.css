@@ -243,3 +243,9 @@ body{font-size:16px;line-height:1.85}
  .models-header>p{font-size:14px}
  .model-card{min-height:0}
 }
+
+/* Make the learning library the clearest entry point */
+.courses-nav-link{border:1px solid #376878!important;background:linear-gradient(100deg,#163744,#17243a)!important;color:#aaf1ef!important;margin:10px 0 17px!important;min-height:48px}
+.courses-nav-link i{font-style:normal;font-size:10px;color:#9ee8d2;background:#174b3c;border-radius:20px;padding:3px 7px;margin-right:auto}
+.hero-course-link{display:inline-flex;align-items:center;gap:8px;margin:0 0 12px;padding:8px 12px;border:1px solid #477b89;border-radius:9px;background:#132f3c;color:#b5f2f0;text-decoration:none;font-size:13px;font-weight:800}
+@media(max-width:700px){.courses-nav-link{margin:7px 0 12px!important}.hero-course-link{font-size:12px}}
