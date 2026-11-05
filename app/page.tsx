@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { Activity, Archive, Bookmark, Bot, BrainCircuit, CalendarDays, Clock3, ExternalLink, Filter, History, Image as ImageIcon, Layers3, Newspaper, Search, Sparkles, Wrench, ChevronDown } from "lucide-react";
 import { supabase } from "@/lib/supabase";
-import { GraduationCap } from "lucide-react";
+import { GraduationCap, BookOpen } from "lucide-react";
 
 type Article = { id: string; title: string; summary: string | null; source_name: string; source_url: string; category: string; published_at: string | null; image_url: string | null };
 const PAGE_SIZE = 50;
@@ -74,6 +74,7 @@ export default function Home() {
       <nav>{sections.map((s,i)=><button key={s} onClick={()=>setActive(s)} className={active===s?"nav-item selected":"nav-item"}>{[<Layers3/>,<Newspaper/>,<Bot/>,<Wrench/>,<ImageIcon/>,<Activity/>,<Sparkles/>][i]}<span>{sectionNames[s]}</span>{active===s&&<i/>}</button>)}</nav>
       <a className="nav-item models-link" href="/models"><BrainCircuit size={17}/><span>أفضل النماذج والتطبيقات</span></a>
       <a className="nav-item models-link" href="/guide"><GraduationCap size={17}/><span>شرح استخدام AI عمليًا</span></a>
+      <a className="nav-item models-link" href="/lessons"><BookOpen size={17}/><span>الدروس اليومية وPrompts</span></a>
       <div className="sidebar-bottom"><div className="live-dot"/> <span>مكتبة AI HUB</span><small>أخبار • نماذج • أدوات • أبحاث</small></div>
     </aside>
     <section className="main">
