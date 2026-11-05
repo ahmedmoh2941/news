@@ -85,7 +85,7 @@ export default function Home() {
         <div className="card-top"><span className="category">{sectionNames[a.category]??a.category}</span><button className={saved.includes(a.id)?"save saved":"save"} onClick={()=>toggleSave(a.id)} aria-label="حفظ"><Bookmark size={17}/></button></div>
         <h3>{a.title}</h3><div className="quick-label">أهم التفاصيل والمميزات</div>
         {summaryPoints(a.summary).length ? <ul className="summary-points">{summaryPoints(a.summary).map((point,i)=><li key={i}>{point}</li>)}</ul> : <p className="summary-empty">لا يتوفر ملخص لهذا الخبر حتى الآن.</p>}
-        <div className="card-foot"><span>{a.source_name}</span><span><Clock3 size={13}/>{a.published_at?new Date(a.published_at).toLocaleString("ar-EG",{dateStyle:"medium",timeStyle:"short"}):""}</span><a href={a.source_url} target="_blank" rel="noreferrer" aria-label="المصدر الأصلي"><ExternalLink size={15}/></a></div>
+        <div className="card-foot"><span>{a.source_name}</span><span><Clock3 size={13}/>{a.published_at?new Date(a.published_at).toLocaleString("ar-EG",{dateStyle:"medium",timeZone:"Africa/Cairo"}):""}</span><a href={a.source_url} target="_blank" rel="noreferrer" aria-label="المصدر الأصلي"><ExternalLink size={15}/></a></div>
       </article>)}</div>}
       {!loading && hasMore && <div className="load-more-wrap"><button className="load-more" onClick={loadMore} disabled={loadingMore}>{loadingMore?"جارٍ تحميل الأخبار...":"تحميل أخبار أقدم"}<ChevronDown size={17}/></button></div>}
       <footer><span>AI HUB © 2026</span><span>معرفة موثوقة. تغطية منظمة. ومصادر أصلية <Sparkles size={13}/></span></footer>
