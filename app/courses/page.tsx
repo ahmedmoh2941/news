@@ -197,7 +197,8 @@ export default function CoursesPage() {
   const [showAll,setShowAll] = useState(false);
   const [onlyFree,setOnlyFree] = useState(false);
   const [videoLanguage,setVideoLanguage] = useState<VideoLanguage>("الكل");
-  const filteredVideoCourses = videoCourses.filter(v => videoLanguage === "الكل" || v.lang === videoLanguage);
+  const [videoTool,setVideoTool] = useState<VideoTool>("الكل");
+  const filteredVideoCourses = videoCourses.filter(v => (videoLanguage === "الكل" || v.lang === videoLanguage) && (videoTool === "الكل" || v.tool === videoTool));
   const filtered = useMemo(() => courses.filter(c => {
     const text = [c.title,c.provider,c.description,c.topic,c.level,c.language].join(" ").toLowerCase();
     return (topic === "الكل" || c.topic === topic) && text.includes(query.toLowerCase()) &&
@@ -209,7 +210,7 @@ export default function CoursesPage() {
     <main className="courses-page" dir="rtl">
       <header className="courses-topbar">
         <a className="courses-brand" href="/"><span><BrainCircuit size={24}/></span><b>AI HUB <small>LEARNING</small></b></a>
-        <nav><a href="/">الرئيسية</a><a href="/models">النماذج والتطبيقات</a><a href="/guide">دليل الاستخدام</a></nav>
+        <nav><a href="/">الرئيسية</a><a href="/models">النماذج والتطبيقات</a><a href="/guide">دليل الاستخدام</a><a href="/lessons">Prompts</a></nav>
         <a className="topbar-back" href="/"><ArrowLeft size={16}/> الرجوع للموقع</a>
       </header>
 
@@ -271,20 +272,27 @@ export default function CoursesPage() {
           <h2>اتفرج واتعلم خطوة بخطوة</h2>
           <p>دورات فيديو طويلة وشروحات عملية، مرتبة من البداية إلى التخصص. بعض البطاقات تفتح فيديو مباشرًا، وبعضها دورة تفاعلية أو صفحة ملخص لفيديو.</p>
         </div>
-        <div className="video-language-tabs">
-          {(["الكل","العربية","الإنجليزية"] as VideoLanguage[]).map(l=><button key={l} onClick={()=>setVideoLanguage(l)} className={videoLanguage===l?"active":""}>{l}</button>)}
+        <div className="video-filter-block">
+          <span>اختر المنصة</span>
+          <div className="video-language-tabs">
+            {(["الكل","ChatGPT","Gemini","Claude","NotebookLM","Copilot","Perplexity","صور وفيديو","برمجة وأتمتة"] as VideoTool[]).map(t=><button key={t} onClick={()=>setVideoTool(t)} className={videoTool===t?"active":""}>{t}</button>)}
+          </div>
+          <span>لغة المحتوى</span>
+          <div className="video-language-tabs">
+            {(["الكل","العربية","الإنجليزية"] as VideoLanguage[]).map(l=><button key={l} onClick={()=>setVideoLanguage(l)} className={videoLanguage===l?"active":""}>{l}</button>)}
+          </div>
         </div>
         <div className="video-course-grid">
           {filteredVideoCourses.map(v=><article className="video-course-card" key={v.id}>
             <div className="video-course-head">
               <span className="video-play-icon"><PlayCircle size={23}/></span>
-              <span className={v.kind==="فيديو كامل"?"video-kind direct":v.kind==="شرح مع ملخص"?"video-kind notes":"video-kind structured"}>{v.kind}</span>
+              <span className={v.kind==="فيديو كامل"?"video-kind direct":v.kind==="شرح مع ملخص"?"video-kind notes":v.kind==="دليل رسمي"?"video-kind official":"video-kind structured"}>{v.kind}</span>
             </div>
             <small className="video-creator">{v.creator}</small>
             <h3>{v.title}</h3>
             <p>{v.description}</p>
             <div className="video-course-meta"><span><Languages size={14}/>{v.lang}</span><span><GraduationCap size={14}/>{v.level}</span><span><Clock3 size={14}/>{v.duration}</span></div>
-            <div className="video-course-bottom"><b>{v.access}</b><a href={v.href} target="_blank" rel="noreferrer">{v.kind==="فيديو كامل"?"شاهد الفيديو":v.kind==="شرح مع ملخص"?"افتح ملخص الفيديو":"افتح الدورة"} <ArrowUpRight size={16}/></a></div>
+            <div className="video-course-bottom"><b>{v.access}</b><a href={v.href} target="_blank" rel="noreferrer">{v.kind==="فيديو كامل"?"شاهد الفيديو":v.kind==="شرح مع ملخص"?"افتح الشرح":v.kind==="دليل رسمي"?"افتح الدليل":"افتح الدورة"} <ArrowUpRight size={16}/></a></div>
           </article>)}
         </div>
         <p className="video-disclaimer">ملحوظة: روابط YouTube مجانية للمشاهدة، أما منصات الكورسات فقد تتيح التسجيل مجانًا مع رسوم لبعض الشهادات أو المزايا. الترجمة التلقائية ليست ترجمة عربية أصلية. راجع تاريخ تحديث كل دورة قبل الاعتماد على شرح خصائص الواجهة.</p>
